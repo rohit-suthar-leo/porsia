@@ -2,21 +2,21 @@ import { Link } from "@remix-run/react";
 
 export default function Footer() {
   return (
-    <footer className="bg-white border-t border-gray-200 py-12">
+    <footer className="bg-white border-t border-gray-200 py-8 md:py-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
           {/* Brand Section */}
-          <div>
+          <div className="col-span-2 md:col-span-1">
             <div className="flex items-center mb-4">
               <div className="relative flex items-center">
                 <img 
                   src="/images/logo.png" 
                   alt="Porsia Logo" 
-                  className="h-20 w-auto translate-y-2.5"
+                  className="h-16 md:h-20 w-auto translate-y-2.5"
                 />
                 <div className="flex items-center -ml-7">
-                  <span className="text-brand-blue text-3xl font-semibold">POR</span>
-                  <span className="text-brand-purple text-3xl font-semibold">SIA</span>
+                  <span className="text-2xl md:text-3xl font-semibold text-brand-blue">POR</span>
+                  <span className="text-2xl md:text-3xl font-semibold text-brand-purple">SIA</span>
                 </div>
               </div>
             </div>
@@ -27,9 +27,9 @@ export default function Footer() {
           </div>
 
           {/* Product Links */}
-          <div>
-            <h3 className="font-medium mb-4">Product</h3>
-            <ul className="space-y-3">
+          <div className="space-y-2 md:space-y-3">
+            <h3 className="text-sm md:text-base font-medium mb-2 md:mb-4">Product</h3>
+            <ul className="space-y-2 md:space-y-3">
               <li>
                 <span className="text-gray-400">Features</span>
               </li>
@@ -43,9 +43,9 @@ export default function Footer() {
           </div>
 
           {/* Company Links */}
-          <div>
-            <h3 className="font-medium mb-4">Company</h3>
-            <ul className="space-y-3">
+          <div className="space-y-2 md:space-y-3">
+            <h3 className="text-sm md:text-base font-medium mb-2 md:mb-4">Company</h3>
+            <ul className="space-y-2 md:space-y-3">
               <li>
                 <span className="text-gray-400">About</span>
               </li>
@@ -64,9 +64,9 @@ export default function Footer() {
           </div>
 
           {/* Legal Links */}
-          <div>
-            <h3 className="font-medium mb-4">Legal</h3>
-            <ul className="space-y-3">
+          <div className="space-y-2 md:space-y-3">
+            <h3 className="text-sm md:text-base font-medium mb-2 md:mb-4">Legal</h3>
+            <ul className="space-y-2 md:space-y-3">
               <li>
                 <span className="text-gray-400">Privacy</span>
               </li>
@@ -81,9 +81,9 @@ export default function Footer() {
         </div>
 
         {/* Copyright */}
-        <div className="mt-12 pt-8 border-t border-gray-200">
-          <p className="text-center text-gray-500 text-sm">
-            © 2025 porsia. All rights reserved.
+        <div className="mt-8 md:mt-12 pt-6 md:pt-8 border-t border-gray-200">
+          <p className="text-center text-gray-500 text-xs md:text-sm">
+            Copyright © 2025 porsia. All rights reserved.
           </p>
         </div>
       </div>

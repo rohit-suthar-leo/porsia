@@ -121,7 +121,7 @@ export default function App() {
           <Outlet />
         </main>
         <Footer />
-        <Link to="/blog">Blog</Link>
+        {/* <Link to="/blog">Blog</Link> */}
         <ScrollRestoration />
         <Scripts />
         <LiveReload />
