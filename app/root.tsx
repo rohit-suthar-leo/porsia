@@ -12,37 +12,34 @@ import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 
 export const meta = () => {
+  const title = "Porsia - Building Your Online Presence with AI Power";
+  const description = "Build an online presence that attracts clients. AI-powered website builder for coaches, freelancers, and professionals. Create a personal brand website that converts visitors into leads.";
+  const image = "https://myporsia.com/images/porsia-thumbnail.png"; // Use absolute URL
+
   return [
     // Primary SEO Title & Description
-    { 
-      title: "Porsia - Building Your Online Presence with AI Power" 
-    },
-    { 
-      name: "description", 
-      content: "Build an online presence that attracts clients. AI-powered website builder for coaches, freelancers, and professionals. Create a personal brand website that converts visitors into leads. Start growing your business with Porsia." 
-    },
-    // Open Graph Tags with SEO Keywords
+    { title },
+    { name: "description", content: description },
+
+    // Open Graph Tags
     { property: "og:type", content: "website" },
     { property: "og:url", content: "https://myporsia.com" },
-    { 
-      property: "og:title", 
-      content: "Create a Website That Brings You Clients | Porsia AI" 
-    },
-    { 
-      property: "og:description", 
-      content: "Turn your online presence into income. Build a professional website that sells, designed to convert visitors into leads. Perfect for coaches and personal brands." 
-    },
-    { 
-      property: "og:image", 
-      content: "/images/porsia-thumbnail.png" 
-    },
+    { property: "og:site_name", content: "Porsia" },
+    { property: "og:title", content: title },
+    { property: "og:description", content: description },
+    { property: "og:image", content: image },
+    { property: "og:image:width", content: "1200" },
+    { property: "og:image:height", content: "630" },
+    { property: "og:image:type", content: "image/png" },
+
     // Twitter Cards
     { name: "twitter:card", content: "summary_large_image" },
-    { 
-      name: "twitter:image", 
-      content: "/images/porsia-thumbnail.png" 
-    },
-    // Additional SEO Meta Tags
+    { name: "twitter:domain", content: "myporsia.com" },
+    { name: "twitter:title", content: title },
+    { name: "twitter:description", content: description },
+    { name: "twitter:image", content: image },
+
+    // Keywords
     { 
       name: "keywords", 
       content: "build online presence to get clients, personal website for lead generation, AI portfolio website for sales, create website to attract clients, convert visitors into leads, get coaching clients through website, professional website that sells, digital presence for personal brand" 
