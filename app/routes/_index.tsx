@@ -9,8 +9,8 @@ import GetStarted from "~/components/GetStarted";
 
 export const meta: MetaFunction = () => {
   return [
-    { title: "Porsia - Create Your Portfolio with AI Power" },
-    { description: "Create your portfolio with AI power" },
+    { title: "Porsia - Building Your Online Presence with AI Power" },
+    { description: "Building Your Online Presence with AI Power" },
   ];
 };
 
