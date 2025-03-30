@@ -13,8 +13,34 @@ import Footer from "./components/Footer";
 
 export const meta = () => {
   return [
-    { title: "Porsia - Create Your Portfolio with AI Power" },
-    { name: "description", content: "Create your portfolio with AI power" },
+    // Primary SEO Title & Description
+    { 
+      title: "Porsia - Turn Your Online Presence into Client Opportunities | AI-Powered Website Builder" 
+    },
+    { 
+      name: "description", 
+      content: "Build an online presence that attracts clients. AI-powered website builder for coaches, freelancers, and professionals. Create a personal brand website that converts visitors into leads. Start growing your business with Porsia." 
+    },
+    // Open Graph Tags with SEO Keywords
+    { property: "og:type", content: "website" },
+    { property: "og:url", content: "https://myporsia.com" },
+    { 
+      property: "og:title", 
+      content: "Create a Website That Brings You Clients | Porsia AI" 
+    },
+    { 
+      property: "og:description", 
+      content: "Turn your online presence into income. Build a professional website that sells, designed to convert visitors into leads. Perfect for coaches and personal brands." 
+    },
+    { property: "og:image", content: "/images/og-image.png" },
+    // Twitter Cards
+    { name: "twitter:card", content: "summary_large_image" },
+    { name: "twitter:image", content: "/images/og-image.png" },
+    // Additional SEO Meta Tags
+    { 
+      name: "keywords", 
+      content: "build online presence to get clients, personal website for lead generation, AI portfolio website for sales, create website to attract clients, convert visitors into leads, get coaching clients through website, professional website that sells, digital presence for personal brand" 
+    },
   ];
 };
 
@@ -37,6 +63,42 @@ export const links: LinksFunction = () => [
 ];
 
 export default function App() {
+  const schemaMarkup = [
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Porsia",
+      "url": "https://myporsia.com",
+      "description": "AI-powered platform to build personal portfolio websites that convert visitors into clients.",
+      "logo": "https://myporsia.com/images/logo.png"
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "Product",
+      "name": "Porsia AI Website Builder",
+      "description": "AI-powered website builder for professionals to create high-converting online presence",
+      "brand": {
+        "@type": "Brand",
+        "name": "Porsia"
+      },
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock"
+      }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "url": "https://myporsia.com",
+      "potentialAction": {
+        "@type": "ReadAction",
+        "target": "https://myporsia.com/features"
+      }
+    }
+  ];
+
   return (
     <html lang="en">
       <head>
@@ -44,12 +106,16 @@ export default function App() {
         <meta name="viewport" content="width=device-width,initial-scale=1" />
         <Meta />
         <Links />
+        <script 
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaMarkup) }}
+        />
       </head>
       <body className="bg-gray-50">
         <Navbar />
-        <div className="pt-16">
+        <main className="pt-16">
           <Outlet />
-        </div>
+        </main>
         <Footer />
         <ScrollRestoration />
         <Scripts />

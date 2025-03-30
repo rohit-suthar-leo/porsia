@@ -74,6 +74,13 @@ export default function Footer() {
             </ul>
           </div>
         </div>
+
+        {/* Copyright */}
+        <div className="mt-12 pt-8 border-t border-gray-200">
+          <p className="text-center text-gray-500 text-sm">
+            © 2025 porsia. All rights reserved.
+          </p>
+        </div>
       </div>
     </footer>
   );

@@ -2,7 +2,7 @@ import { Link } from '@remix-run/react';
 
 export default function Hero() {
   return (
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+    <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
         {/* Left Column */}
         <div>
@@ -14,11 +14,11 @@ export default function Hero() {
           </div>
           
           <h1 className="text-5xl font-medium mb-6 leading-tight">
-            Create Your Portfolio with AI Power
+            Turn Your Online Presence into Client Opportunities
           </h1>
           
           <p className="text-gray-600 text-lg mb-8">
-            We're currently offering handcrafted portfolios for early users as we build the full AI-powered experience. Be among the first to shape the future of online presence.
+            Build a website that converts visitors into leads. Perfect for coaches, freelancers, and professionals looking to grow their business through a powerful online presence.
           </p>
           
           <div className="flex gap-4 items-center">
@@ -27,12 +27,14 @@ export default function Hero() {
               target="_blank"
               rel="noopener noreferrer"
               className="inline-block px-6 py-3 bg-purple-600 text-white rounded-lg hover:bg-purple-700 transition-colors"
+              aria-label="Schedule a portfolio strategy call"
             >
               Schedule a Call
             </a>
-            <Link
-              to="/learn-more"
+            <a
+              href="#features"
               className="inline-flex items-center text-purple-600 hover:text-purple-700"
+              aria-label="Learn more about Porsia features"
             >
               Learn More
               <svg
@@ -40,6 +42,7 @@ export default function Hero() {
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
+                aria-hidden="true"
               >
                 <path
                   strokeLinecap="round"
@@ -48,7 +51,7 @@ export default function Hero() {
                   d="M9 5l7 7-7 7"
                 />
               </svg>
-            </Link>
+            </a>
           </div>
         </div>
 
@@ -56,11 +59,14 @@ export default function Hero() {
         <div className="relative">
           <img
             src="/assets/portfolio-preview.png"
-            alt="Portfolio Preview"
+            alt="Example of a professional portfolio website built with Porsia's AI technology"
             className="w-full h-auto"
+            width="600"
+            height="400"
+            loading="eager"
           />
         </div>
       </div>
-    </div>
+    </section>
   );
 } 

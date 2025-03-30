@@ -5,8 +5,8 @@
   "type": "module",
   "scripts": {
     "build": "remix build",
-    "dev": "PORT=3000 remix dev",
-    "start": "PORT=3000 remix-serve ./build/index.js",
+    "dev": "remix dev",
+    "start": "remix-serve ./build/index.js",
     "typecheck": "tsc"
   },
   "dependencies": {

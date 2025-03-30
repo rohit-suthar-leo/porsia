@@ -97,6 +97,15 @@ export default function Vision() {
               <div className="w-1/2 pl-12"></div>
             </div>
           </div>
+
+          <img 
+            src="/images/vision-preview.png"
+            alt="Porsia's AI-powered portfolio builder interface showing customization options"
+            className="w-full h-auto rounded-lg shadow-lg"
+            width="800"
+            height="600"
+            loading="lazy"
+          />
         </div>
       </div>
     </div>
