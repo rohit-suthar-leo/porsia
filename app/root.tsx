@@ -15,7 +15,7 @@ export const meta = () => {
   return [
     // Primary SEO Title & Description
     { 
-      title: "Porsia - Turn Your Online Presence into Client Opportunities | AI-Powered Website Builder" 
+      title: "Porsia - Building Your Online Presence with AI Power" 
     },
     { 
       name: "description", 
@@ -32,10 +32,16 @@ export const meta = () => {
       property: "og:description", 
       content: "Turn your online presence into income. Build a professional website that sells, designed to convert visitors into leads. Perfect for coaches and personal brands." 
     },
-    { property: "og:image", content: "/images/og-image.png" },
+    { 
+      property: "og:image", 
+      content: "/images/porsia-thumbnail.png" 
+    },
     // Twitter Cards
     { name: "twitter:card", content: "summary_large_image" },
-    { name: "twitter:image", content: "/images/og-image.png" },
+    { 
+      name: "twitter:image", 
+      content: "/images/porsia-thumbnail.png" 
+    },
     // Additional SEO Meta Tags
     { 
       name: "keywords", 
