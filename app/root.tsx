@@ -6,6 +6,7 @@ import {
   Outlet,
   Scripts,
   ScrollRestoration,
+  Link,
 } from "@remix-run/react";
 import styles from "./styles/global.css";
 import Navbar from "./components/Navbar";
@@ -120,6 +121,7 @@ export default function App() {
           <Outlet />
         </main>
         <Footer />
+        <Link to="/blog">Blog</Link>
         <ScrollRestoration />
         <Scripts />
         <LiveReload />

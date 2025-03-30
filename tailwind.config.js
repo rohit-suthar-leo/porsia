@@ -4,8 +4,8 @@ export default {
   theme: {
     extend: {
       colors: {
-        'brand-blue': '#4553CC',
         'brand-purple': '#DA9CEA',
+        'brand-blue': '#4553CC',
         purple: {
           100: '#F3F0FF',
           600: '#6B46C1',

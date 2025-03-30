@@ -50,7 +50,12 @@ export default function Footer() {
                 <span className="text-gray-400">About</span>
               </li>
               <li>
-                <span className="text-gray-400">Blog</span>
+                <Link 
+                  to="/blog" 
+                  className="text-gray-600 hover:text-brand-purple transition-colors"
+                >
+                  Blog
+                </Link>
               </li>
               <li>
                 <span className="text-gray-400">Careers</span>
