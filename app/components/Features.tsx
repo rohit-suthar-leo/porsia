@@ -1,96 +1,87 @@
+import { HiOutlineIdentification } from "react-icons/hi";
+import { HiOutlineChartBar } from "react-icons/hi";
+import { HiOutlineLightningBolt } from "react-icons/hi";
+import { HiOutlineChartSquareBar } from "react-icons/hi";
+import { HiOutlineSparkles } from "react-icons/hi";
+
 export default function Features() {
   return (
-    <div className="relative">
-      {/* Background curve */}
-      <div className="absolute inset-0 overflow-hidden">
-        <svg
-          className="absolute left-0 w-full h-full"
-          viewBox="0 0 1482 532"
-          fill="none"
-          preserveAspectRatio="none"
-        >
-          <path
-            d="M0 0 
-               C 200 0, 300 0, 400 150
-               C 500 300, 600 250, 740 250
-               C 880 250, 1000 300, 1100 400
-               C 1200 500, 1300 450, 1482 400
-               L 1482 532 
-               L 0 532 Z"
-            fill="#DA9CEA"
-            fillOpacity="0.1"
-          />
-        </svg>
-      </div>
-
-      <div className="relative py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          {/* Heading */}
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-medium mb-4">What We're Building</h2>
-            <p className="text-gray-600 text-lg">
-              Currently in development — working with real professionals to shape what comes next
-            </p>
+    <div className="relative bg-gray-50 pt-6">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Bento Grid Layout */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {/* Professional Online Presence */}
+          <div className="md:col-span-2 bg-gradient-to-br from-blue-50 to-purple-50 rounded-3xl p-8 border border-blue-100 shadow-sm hover:shadow-md transition-all">
+            <div className="bg-white/80 backdrop-blur w-12 h-12 rounded-xl flex items-center justify-center mb-6 border border-blue-100">
+              <HiOutlineIdentification className="w-6 h-6 text-brand-blue" />
+            </div>
+            <h3 className="text-xl font-semibold mb-3 text-gray-900">Professional Online Presence</h3>
+            <p className="text-gray-600">Create a personalized portfolio that builds trust and shows what you do best — even before the first call.</p>
           </div>
 
-          {/* Features Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
-            {/* SEO Optimization */}
-            <div className="text-center">
-              <div className="inline-flex items-center justify-center w-16 h-16 rounded-xl bg-purple-100 mb-6">
-                <svg 
-                  className="w-8 h-8 text-purple-600" 
-                  viewBox="0 0 24 24" 
-                  fill="currentColor"
-                >
-                  <path d="M13 10V3L4 14h7v7l9-11h-7z" />
-                </svg>
-              </div>
-              <h3 className="text-xl font-medium mb-3">SEO Optimization</h3>
-              <p className="text-gray-600">
-                AI-powered SEO tools to help your portfolio rank higher in search results
-              </p>
+          {/* Lead Conversion Focus */}
+          <div className="bg-white rounded-3xl p-8 border border-gray-100 shadow-sm hover:shadow-md transition-all">
+            <div className="bg-purple-50 w-12 h-12 rounded-xl flex items-center justify-center mb-6 border border-purple-100">
+              <HiOutlineChartBar className="w-6 h-6 text-brand-purple" />
             </div>
+            <h3 className="text-lg font-semibold mb-3 text-gray-900">Lead Conversion Focus</h3>
+            <p className="text-gray-600">Turn visitors into clients with credibility-first design, social proof, and clear CTAs — built to convert.</p>
+          </div>
 
-            {/* Professional Credibility */}
-            <div className="text-center">
-              <div className="inline-flex items-center justify-center w-16 h-16 rounded-xl bg-purple-100 mb-6">
-                <svg 
-                  className="w-8 h-8 text-purple-600" 
-                  viewBox="0 0 24 24" 
-                  fill="currentColor"
-                >
-                  <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z" />
-                </svg>
-              </div>
-              <h3 className="text-xl font-medium mb-3">Professional Credibility</h3>
-              <p className="text-gray-600">
-                Build trust with a polished online presence that showcases your expertise
-              </p>
+          {/* Fast Setup */}
+          <div className="bg-gradient-to-br from-purple-50 to-pink-50 rounded-3xl p-8 border border-purple-100 shadow-sm hover:shadow-md transition-all">
+            <div className="bg-white/80 backdrop-blur w-12 h-12 rounded-xl flex items-center justify-center mb-6 border border-purple-100">
+              <HiOutlineLightningBolt className="w-6 h-6 text-brand-purple" />
             </div>
+            <h3 className="text-xl font-semibold mb-3 text-gray-900">Fast, Frictionless Setup</h3>
+            <p className="text-gray-600">Get your portfolio online in minutes, not days. No tech skills. Just content + click → you're live.</p>
+          </div>
 
-            {/* Enhanced Visibility */}
-            <div className="text-center">
-              <div className="inline-flex items-center justify-center w-16 h-16 rounded-xl bg-purple-100 mb-6">
-                <svg 
-                  className="w-8 h-8 text-purple-600" 
-                  viewBox="0 0 24 24" 
-                  fill="currentColor"
-                >
-                  <path d="M16 6l2.29 2.29-4.88 4.88-4-4L2 16.59 3.41 18l6-6 4 4 6.3-6.29L22 12V6z" />
-                </svg>
+          {/* Credibility Stats */}
+          <div className="md:col-span-2 bg-white rounded-3xl p-8 border border-gray-100 shadow-sm hover:shadow-md transition-all group">
+            <div className="flex items-start gap-6">
+              <div className="bg-blue-50 w-12 h-12 rounded-xl flex items-center justify-center border border-blue-100">
+                <HiOutlineChartSquareBar className="w-6 h-6 text-brand-blue" />
               </div>
-              <h3 className="text-xl font-medium mb-3">Enhanced Visibility</h3>
-              <p className="text-gray-600">
-                Get discovered by potential clients with AI-optimized content
-              </p>
+              <div className="flex-1">
+                <h3 className="text-xl font-semibold mb-4 text-gray-900">Credibility That Drives Results</h3>
+                <div className="grid grid-cols-2 gap-4">
+                  <div className="p-4 bg-purple-50 rounded-xl border border-purple-100 hover:scale-105 transition-transform">
+                    <div className="text-2xl font-bold text-brand-purple mb-2">95%</div>
+                    <div className="text-gray-600 text-sm">say it helped them build client trust</div>
+                  </div>
+                  <div className="p-4 bg-blue-50 rounded-xl border border-blue-100 hover:scale-105 transition-transform">
+                    <div className="text-2xl font-bold text-brand-blue mb-2">80%</div>
+                    <div className="text-gray-600 text-sm">less time to launch than building from scratch</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Get Started Card */}
+          <div className="md:col-span-3 bg-gradient-to-r from-blue-50 via-purple-50 to-pink-50 rounded-3xl p-8 border border-blue-100 shadow-sm hover:shadow-md transition-all">
+            <div className="flex items-start justify-between">
+              <div>
+                <div className="bg-white/80 backdrop-blur w-12 h-12 rounded-xl flex items-center justify-center mb-6 border border-blue-100">
+                  <HiOutlineSparkles className="w-6 h-6 text-brand-blue" />
+                </div>
+                <h3 className="text-xl font-semibold mb-3 text-gray-900">Turn Your Presence into Performance</h3>
+                <p className="text-gray-600 max-w-2xl">Join the early access program and start turning your audience into action.</p>
+              </div>
+              <a
+                href="#contact-form"
+                className="inline-flex items-center px-6 py-3 bg-brand-blue text-white rounded-xl hover:bg-blue-700 transition-all"
+              >
+                Get Started
+                <svg className="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7"/>
+                </svg>
+              </a>
             </div>
           </div>
         </div>
       </div>
-
-      {/* Bottom line */}
-      <div className="absolute bottom-0 left-0 right-0 h-[1px] bg-gray-200"></div>
     </div>
   );
-} 
+}

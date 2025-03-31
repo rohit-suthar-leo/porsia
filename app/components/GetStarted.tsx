@@ -1,102 +1,115 @@
-import { useEffect } from 'react';
-import { motion } from "framer-motion";
-
-interface Bubble {
-  id: number;
-  x: number;
-  y: number;
-  size: number;
-  color: string;
-  duration: number;
-}
-
-declare global {
-  interface Window {
-    tf: any;
-  }
-}
+import { 
+  HiOutlineSparkles,
+  HiOutlineArrowRight,
+  HiOutlineMail
+} from "react-icons/hi";
 
 export default function GetStarted() {
-  // Generate random bubbles
-  const bubbles: Bubble[] = Array.from({ length: 8 }, (_, i) => ({
-    id: i,
-    x: Math.random() * 100,
-    y: Math.random() * 100,
-    size: Math.random() * 150 + 100,
-    color: i % 2 === 0 ? "#DA9CEA" : "#4553CC",
-    duration: Math.random() * 20 + 15
-  }));
+  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    const form = event.currentTarget;
 
-  useEffect(() => {
-    // Create and load the Typeform embed script
-    const script = document.createElement('script');
-    script.src = "//embed.typeform.com/next/embed.js";
-    script.async = true;
-    
-    script.onload = () => {
-      // Initialize Typeform after script loads
-      if (window.tf) {
-        window.tf.createWidget();
+    try {
+      const response = await fetch(form.action, {
+        method: 'POST',
+        body: new FormData(form),
+      });
+
+      if (response.ok) {
+        form.reset(); // Clear all fields after successful submission
       }
-    };
-
-    document.body.appendChild(script);
-
-    return () => {
-      // Cleanup script when component unmounts
-      const existingScript = document.querySelector('script[src="//embed.typeform.com/next/embed.js"]');
-      if (existingScript) {
-        document.body.removeChild(existingScript);
-      }
-    };
-  }, []);
+    } catch (error) {
+      console.error('Error submitting form:', error);
+    }
+  };
 
   return (
-    <div className="relative bg-[#F3F0FF] py-24 overflow-hidden">
-      {/* Top line */}
-      <div className="absolute top-0 left-0 right-0 h-[1px] bg-gray-200"></div>
-
-      {/* Floating Bubbles */}
-      {bubbles.map((bubble) => (
-        <motion.div
-          key={bubble.id}
-          className="absolute rounded-full blur-lg"
-          style={{
-            width: bubble.size,
-            height: bubble.size,
-            backgroundColor: bubble.color,
-            opacity: 0.25,
-            left: `${bubble.x}%`,
-            top: `${bubble.y}%`,
-            backdropFilter: 'blur(8px)',
-            mixBlendMode: 'multiply',
-          }}
-          animate={{
-            y: [0, -70, 0],
-            x: [0, 40, 0],
-            scale: [1, 1.2, 1],
-          }}
-          transition={{
-            duration: bubble.duration,
-            repeat: Infinity,
-            ease: "easeInOut",
-            repeatType: "reverse",
-          }}
-        />
-      ))}
-
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Heading */}
-        <div className="text-center mb-16">
-          <h2 className="text-4xl font-medium mb-4">Get Started Today</h2>
-          <p className="text-gray-600 text-lg">
-            Want to be an early user? We're currently offering personalized profiles while building the AI experience.
+    <div className="relative bg-white pt-6 pb-12" id="contact-form">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Header Card */}
+        <div className="mb-6 bg-gradient-to-br from-blue-50 to-purple-50 rounded-3xl p-8 border border-blue-100 shadow-sm">
+          <div className="flex items-center gap-4 mb-6">
+            <div className="bg-white/80 backdrop-blur w-12 h-12 rounded-xl flex items-center justify-center border border-blue-100">
+              <HiOutlineSparkles className="w-6 h-6 text-brand-blue" />
+            </div>
+            <h2 className="text-2xl font-semibold text-gray-900">Ready to Get Started?</h2>
+          </div>
+          <p className="text-gray-600 text-lg max-w-3xl">
+            Join our early access program and start building your professional presence today.
           </p>
         </div>
 
-        {/* Typeform */}
-        <div className="max-w-3xl mx-auto">
-          <div data-tf-live="01JQE71XQ9HYQDQ458N1VEB6GB"></div>
+        {/* Contact Form */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          {/* Form Section */}
+          <div className="bg-white rounded-3xl p-8 border border-gray-100 shadow-sm">
+            <form 
+              action="https://getform.io/f/bxowgkwa"
+              method="POST"
+              className="space-y-4"
+              onSubmit={handleSubmit}
+            >
+              <div>
+                <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">Name</label>
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  className="w-full px-4 py-2 rounded-lg border border-gray-200 focus:ring-2 focus:ring-brand-blue focus:border-transparent"
+                  placeholder="Your name"
+                  required
+                />
+              </div>
+              <div>
+                <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">Email</label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  className="w-full px-4 py-2 rounded-lg border border-gray-200 focus:ring-2 focus:ring-brand-blue focus:border-transparent"
+                  placeholder="you@example.com"
+                  required
+                />
+              </div>
+              <div>
+                <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1">Message</label>
+                <textarea
+                  id="message"
+                  name="message"
+                  rows={4}
+                  className="w-full px-4 py-2 rounded-lg border border-gray-200 focus:ring-2 focus:ring-brand-blue focus:border-transparent"
+                  placeholder="Tell us about your needs..."
+                  required
+                />
+              </div>
+              <button
+                type="submit"
+                className="w-full px-6 py-3 bg-brand-blue text-white rounded-xl hover:bg-blue-700 transition-all flex items-center justify-center"
+              >
+                Send Message
+                <HiOutlineArrowRight className="ml-2 w-5 h-5" />
+              </button>
+            </form>
+          </div>
+
+          {/* Contact Info */}
+          <div className="bg-white rounded-3xl p-8 border border-gray-100 shadow-sm">
+            <div className="flex items-center gap-4 mb-6">
+              <div className="bg-blue-50 w-12 h-12 rounded-xl flex items-center justify-center border border-blue-100">
+                <HiOutlineMail className="w-6 h-6 text-brand-blue" />
+              </div>
+              <h3 className="text-xl font-semibold text-gray-900">Contact Us</h3>
+            </div>
+            <p className="text-gray-600 mb-6">
+              Have questions? We're here to help. Send us a message and we'll get back to you as soon as possible.
+            </p>
+            <div className="space-y-4">
+              <a href="mailto:hello@myporsia.com" className="flex items-center text-brand-blue hover:text-blue-700 transition-colors">
+                <span>hello@myporsia.com</span>
+                <HiOutlineArrowRight className="ml-2 w-4 h-4" />
+              </a>
+            </div>
+          </div>
         </div>
       </div>
     </div>

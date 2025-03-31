@@ -1,94 +1,109 @@
+import { 
+  HiOutlineSparkles,
+  HiOutlinePencilAlt,
+  HiOutlineCode,
+  HiOutlineChartSquareBar,
+  HiOutlineGift,
+  HiOutlineCheck
+} from "react-icons/hi";
+
 export default function HowItWorks() {
   return (
-    <div className="relative bg-[#F3F0FF] py-24">
-      {/* Top line */}
-      <div className="absolute top-0 left-0 right-0 h-[1px] bg-gray-200"></div>
+    <div className="relative bg-gray-50 pt-6">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Intro Card */}
+        <div className="mb-6 bg-gradient-to-br from-blue-50 to-purple-50 rounded-3xl p-8 border border-blue-100 shadow-sm">
+          <div className="flex items-center gap-4 mb-6">
+            <div className="bg-white/80 backdrop-blur w-12 h-12 rounded-xl flex items-center justify-center border border-blue-100">
+              <HiOutlineSparkles className="w-6 h-6 text-brand-blue" />
+            </div>
+            <h2 className="text-2xl font-semibold text-gray-900">How It Works</h2>
+          </div>
+          <p className="text-gray-600 text-lg max-w-3xl">
+            We don't just build your site — we guide you on how to grow your credibility, build trust, and convert more leads across all touchpoints.
+          </p>
+        </div>
 
-      {/* Background curve */}
-      <div className="absolute inset-0 overflow-hidden">
-        <svg
-          className="absolute left-0 w-full h-full"
-          viewBox="0 0 1482 532"
-          fill="none"
-          preserveAspectRatio="none"
-        >
-          <path
-            d="M1482 532
-               C 1300 482, 1200 32, 1000 132
-               C 800 232, 700 282, 600 282
-               C 400 282, 300 182, 200 132
-               C 100 82, 50 132, 0 132
-               L 0 0
-               L 1482 0 Z"
-            fill="#4553CC"
-            fillOpacity="0.1"
-          />
-        </svg>
-      </div>
-
-      <div className="relative">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          {/* Heading */}
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-medium mb-4">How It Works</h2>
-            <p className="text-gray-600 text-lg">
-              Right now, we design your site manually. Soon, AI will handle everything — from structure to content.
-            </p>
+        {/* Steps Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {/* Step 1 */}
+          <div className="bg-white rounded-3xl p-8 border border-gray-100 shadow-sm hover:shadow-md transition-all">
+            <div className="flex items-center gap-4 mb-6">
+              <div className="bg-purple-50 w-12 h-12 rounded-xl flex items-center justify-center border border-purple-100">
+                <HiOutlinePencilAlt className="w-6 h-6 text-brand-purple" />
+              </div>
+              <div className="text-xl font-semibold text-brand-purple">Step 1</div>
+            </div>
+            <h3 className="text-xl font-semibold mb-3 text-gray-900">Share What You Do</h3>
+            <p className="text-gray-600">Send us your experience, services, and goals — we'll shape them into a strong online narrative.</p>
           </div>
 
-          {/* Steps Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
-            {/* Step 1 */}
-            <div className="text-center">
-              <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-white mb-6">
-                <svg 
-                  className="w-8 h-8 text-purple-600" 
-                  viewBox="0 0 24 24" 
-                  fill="currentColor"
-                >
-                  <path d="M9 16h6v-6h4l-7-7-7 7h4v6zm-4 2h14v2H5v-2z" />
-                </svg>
+          {/* Step 2 */}
+          <div className="bg-white rounded-3xl p-8 border border-gray-100 shadow-sm hover:shadow-md transition-all">
+            <div className="flex items-center gap-4 mb-6">
+              <div className="bg-blue-50 w-12 h-12 rounded-xl flex items-center justify-center border border-blue-100">
+                <HiOutlineCode className="w-6 h-6 text-brand-blue" />
               </div>
-              <h3 className="text-xl font-medium mb-3">1. Upload Your Work</h3>
-              <p className="text-gray-600">
-                Share your projects, experience, and achievements
-              </p>
+              <div className="text-xl font-semibold text-brand-blue">Step 2</div>
             </div>
-
-            {/* Step 2 */}
-            <div className="text-center">
-              <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-white mb-6">
-                <svg 
-                  className="w-8 h-8 text-purple-600" 
-                  viewBox="0 0 24 24" 
-                  fill="currentColor"
-                >
-                  <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-2 10h-4v4h-2v-4H7v-2h4V7h2v4h4v2z" />
-                </svg>
-              </div>
-              <h3 className="text-xl font-medium mb-3">2. AI Enhancement</h3>
-              <p className="text-gray-600">
-                Our AI optimizes your content and design
-              </p>
-            </div>
-
-            {/* Step 3 */}
-            <div className="text-center">
-              <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-white mb-6">
-                <svg 
-                  className="w-8 h-8 text-purple-600" 
-                  viewBox="0 0 24 24" 
-                  fill="currentColor"
-                >
-                  <path d="M11 18h2v-2h-2v2zm1-16C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm0-14c-2.21 0-4 1.79-4 4h2c0-1.1.9-2 2-2s2 .9 2 2c0 2-3 1.75-3 5h2c0-2.25 3-2.5 3-5 0-2.21-1.79-4-4-4z" />
-                </svg>
-              </div>
-              <h3 className="text-xl font-medium mb-3">3. Launch & Grow</h3>
-              <p className="text-gray-600">
-                Your portfolio goes live with ongoing AI improvements
-              </p>
-            </div>
+            <h3 className="text-xl font-semibold mb-3 text-gray-900">We Build Your Portfolio</h3>
+            <p className="text-gray-600">We create a personalized, high-converting portfolio designed to earn trust and attract the right clients.</p>
           </div>
+
+          {/* Step 3 */}
+          <div className="bg-white rounded-3xl p-8 border border-gray-100 shadow-sm hover:shadow-md transition-all">
+            <div className="flex items-center gap-4 mb-6">
+              <div className="bg-indigo-50 w-12 h-12 rounded-xl flex items-center justify-center border border-indigo-100">
+                <HiOutlineChartSquareBar className="w-6 h-6 text-indigo-600" />
+              </div>
+              <div className="text-xl font-semibold text-indigo-600">Step 3</div>
+            </div>
+            <h3 className="text-xl font-semibold mb-3 text-gray-900">Get Strategic Growth Guidance</h3>
+            <p className="text-gray-600">We'll guide you on how to boost your credibility across platforms (LinkedIn, Instagram, etc.) and turn traffic into sales even beyond your website.</p>
+          </div>
+
+          {/* Bonus Card */}
+          {/* <div className="md:col-span-3 bg-gradient-to-r from-blue-50 via-purple-50 to-pink-50 rounded-3xl p-8 border border-blue-100 shadow-sm hover:shadow-md transition-all">
+            <div className="flex items-center gap-4 mb-6">
+              <div className="bg-white/80 backdrop-blur w-12 h-12 rounded-xl flex items-center justify-center border border-blue-100">
+                <HiOutlineGift className="w-6 h-6 text-brand-blue" />
+              </div>
+              <h3 className="text-xl font-semibold text-gray-900">What You'll Get</h3>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              <div className="flex items-center gap-3">
+                <HiOutlineCheck className="w-5 h-5 text-brand-purple" />
+                <p className="text-gray-600">Portfolio? Done.</p>
+              </div>
+              <div className="flex items-center gap-3">
+                <HiOutlineCheck className="w-5 h-5 text-brand-blue" />
+                <p className="text-gray-600">Personal brand? Growing.</p>
+              </div>
+              <div className="flex items-center gap-3">
+                <HiOutlineCheck className="w-5 h-5 text-indigo-600" />
+                <p className="text-gray-600">Leads? On the way.</p>
+              </div>
+            </div>
+          </div> */}
+
+          {/* Get Started Card */}
+          {/* <div className="md:col-span-3 bg-brand-blue rounded-3xl p-8 shadow-lg hover:shadow-xl transition-all">
+            <div className="flex items-center justify-between">
+              {/* <div className="text-white">
+                <h3 className="text-2xl font-semibold mb-2">Ready to Transform Your Online Presence?</h3>
+                <p className="text-blue-100">Join our early access program and start turning your audience into action.</p>
+              </div> */}
+              {/* <a
+                href="#contact-form"
+                className="inline-flex items-center px-6 py-3 bg-white text-brand-blue rounded-xl hover:bg-blue-50 transition-all"
+              >
+                Get Started
+                <svg className="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7"/>
+                </svg>
+              </a> */}
+            {/* </div>  */}
+          {/* </div>  */}
         </div>
       </div>
     </div>

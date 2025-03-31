@@ -1,101 +1,49 @@
-import { motion } from "framer-motion";
-
-interface Bubble {
-  id: number;
-  x: number;
-  y: number;
-  size: number;
-  color: string;
-  duration: number;
-}
+import { 
+  HiOutlineLightBulb,
+  HiOutlineGlobe,
+  HiOutlineUserGroup,
+  HiOutlineTrendingUp
+} from "react-icons/hi";
 
 export default function Vision() {
-  // Generate random bubbles
-  const bubbles: Bubble[] = Array.from({ length: 8 }, (_, i) => ({
-    id: i,
-    x: Math.random() * 100,
-    y: Math.random() * 100,
-    size: Math.random() * 150 + 100,
-    color: i % 2 === 0 ? "#DA9CEA" : "#4553CC",
-    duration: Math.random() * 20 + 15
-  }));
-
   return (
-    <div className="relative py-24 overflow-hidden">
-      {/* Floating Bubbles */}
-      {bubbles.map((bubble) => (
-        <motion.div
-          key={bubble.id}
-          className="absolute rounded-full blur-lg"
-          style={{
-            width: bubble.size,
-            height: bubble.size,
-            backgroundColor: bubble.color,
-            opacity: 0.25,
-            left: `${bubble.x}%`,
-            top: `${bubble.y}%`,
-            backdropFilter: 'blur(8px)',
-            mixBlendMode: 'multiply',
-          }}
-          animate={{
-            y: [0, -70, 0],
-            x: [0, 40, 0],
-            scale: [1, 1.2, 1],
-          }}
-          transition={{
-            duration: bubble.duration,
-            repeat: Infinity,
-            ease: "easeInOut",
-            repeatType: "reverse",
-          }}
-        />
-      ))}
+    <div className="relative bg-gray-50 pt-6" id="vision">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Header Card */}
+        <div className="mb-6 bg-gradient-to-br from-blue-50 to-purple-50 rounded-3xl p-8 border border-blue-100 shadow-sm">
+          <div className="flex items-center gap-4 mb-6">
+            <div className="bg-white/80 backdrop-blur w-12 h-12 rounded-xl flex items-center justify-center border border-blue-100">
+              <HiOutlineLightBulb className="w-6 h-6 text-brand-blue" />
+            </div>
+            <h2 className="text-2xl font-semibold text-gray-900">Our Vision</h2>
+          </div>
+          <p className="text-gray-600 text-lg max-w-3xl">
+            Empowering professionals to build trust and grow their business online.
+          </p>
+        </div>
 
-      <div className="relative z-10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          {/* Heading */}
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-medium mb-4">Our Vision</h2>
-            <p className="text-gray-600 text-lg">
-              The future of AI-powered portfolio creation
-            </p>
+        {/* Vision Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          {/* Global Impact */}
+          <div className="bg-white rounded-3xl p-8 border border-gray-100 shadow-sm hover:shadow-md transition-all">
+            <div className="flex items-center gap-4 mb-4">
+              <div className="bg-purple-50 w-12 h-12 rounded-xl flex items-center justify-center border border-purple-100">
+                <HiOutlineGlobe className="w-6 h-6 text-brand-purple" />
+              </div>
+              <h3 className="text-xl font-semibold text-gray-900">Global Impact</h3>
+            </div>
+            <p className="text-gray-600">Helping professionals worldwide showcase their expertise and build their online presence.</p>
           </div>
 
-          {/* Timeline */}
-          <div className="max-w-5xl mx-auto">
-            {/* Phase 1 - Left */}
-            <div className="flex items-center mb-16">
-              <div className="w-1/2 pr-12 text-right">
-                <h3 className="text-xl font-medium mb-2">Phase 1: Foundation</h3>
-                <p className="text-gray-600">Custom-built portfolios & user research</p>
+          {/* Community Growth */}
+          <div className="bg-gradient-to-br from-blue-50 to-purple-50 rounded-3xl p-8 border border-blue-100 shadow-sm hover:shadow-md transition-all">
+            <div className="flex items-center gap-4 mb-4">
+              <div className="bg-white/80 backdrop-blur w-12 h-12 rounded-xl flex items-center justify-center border border-blue-100">
+                <HiOutlineUserGroup className="w-6 h-6 text-brand-blue" />
               </div>
-              <div className="w-4 h-4 rounded-full bg-purple-600 relative">
-                <div className="absolute w-px h-full bg-purple-200 left-1/2 -translate-x-1/2 top-4"></div>
-              </div>
-              <div className="w-1/2 pl-12"></div>
+              <h3 className="text-xl font-semibold text-gray-900">Community Growth</h3>
             </div>
-
-            {/* Phase 2 - Right */}
-            <div className="flex items-center mb-16">
-              <div className="w-1/2 pr-12"></div>
-              <div className="w-4 h-4 rounded-full bg-purple-600 relative">
-                <div className="absolute w-px h-full bg-purple-200 left-1/2 -translate-x-1/2 top-4"></div>
-              </div>
-              <div className="w-1/2 pl-12">
-                <h3 className="text-xl font-medium mb-2">Phase 2: Advanced AI</h3>
-                <p className="text-gray-600">Automation & personalization (coming soon)</p>
-              </div>
-            </div>
-
-            {/* Phase 3 - Left */}
-            <div className="flex items-center">
-              <div className="w-1/2 pr-12 text-right">
-                <h3 className="text-xl font-medium mb-2">Phase 3: Integration</h3>
-                <p className="text-gray-600">Integration – Ecosystem & platform tools</p>
-              </div>
-              <div className="w-4 h-4 rounded-full bg-purple-600"></div>
-              <div className="w-1/2 pl-12"></div>
-            </div>
+            <p className="text-gray-600">Building a network of successful professionals who support and inspire each other.</p>
           </div>
         </div>
       </div>
