@@ -58,7 +58,7 @@ export default function Hero() {
         {/* Right Column */}
         <div className="relative">
           <img
-            src="/assets/portfolio-preview.png"
+            src="/assets/portfolio-preview.webp"
             alt="Example of a professional portfolio website built with Porsia's AI technology"
             className="w-full h-auto"
             width="600"

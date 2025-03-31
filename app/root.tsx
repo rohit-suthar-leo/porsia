@@ -74,7 +74,7 @@ export default function App() {
       "name": "Porsia",
       "url": "https://myporsia.com",
       "description": "AI-powered platform to build personal portfolio websites that convert visitors into clients.",
-      "logo": "https://myporsia.com/images/logo.png"
+      "logo": "https://myporsia.com/images/logo.webp"
     },
     {
       "@context": "https://schema.org",

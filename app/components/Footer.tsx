@@ -10,7 +10,7 @@ export default function Footer() {
             <div className="flex items-center mb-4">
               <div className="relative flex items-center">
                 <img 
-                  src="/images/logo.png" 
+                  src="/images/logo.webp" 
                   alt="Porsia Logo" 
                   className="h-16 md:h-20 w-auto translate-y-2.5"
                 />

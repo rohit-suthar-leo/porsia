@@ -1,5 +1,5 @@
-import logoDark from "../../public/images/logo.png";
-import logoLight from "../../public/images/logo.png";
+import logoDark from "../../public/images/logo.webp";
+import logoLight from "../../public/images/logo.webp";
 
 export function Welcome() {
   return (
