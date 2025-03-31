@@ -5,8 +5,8 @@ export default function Blog() {
   const posts = [
     {
       id: '1',
-      title: 'How it started vs. how it's going',
-      excerpt: 'A short personal history as it relates to design and development, and how I've found value in the cross-section between both disciplines.',
+      title: "How it started vs. how it's going",
+      excerpt: "A short personal history as it relates to design and development, and how I've found value in the cross-section between both disciplines.",
       date: 'May 5, 2023',
       category: 'Design',
       image: '/images/blog/post-1.jpg'

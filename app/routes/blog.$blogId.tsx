@@ -82,12 +82,10 @@ export default function BlogPost() {
 
   // Mock data - replace with your actual data fetching
   const post = {
-    title: 'How it started vs. how it's going',
+    title: "How it started vs. how it's going",
     date: 'May 5, 2023',
     category: 'Design',
-    content: `A short personal history as it relates to design and development, and how I've found value in the cross-section between both disciplines.
-
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.`,
+    content: "A short personal history as it relates to design and development, and how I've found value in the cross-section between both disciplines.",
     image: '/images/blog/post-1.jpg'
   };
 
