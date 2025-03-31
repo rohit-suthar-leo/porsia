@@ -1,6 +1,6 @@
 import { useParams, Link } from "@remix-run/react";
+import { HiOutlineArrowLeft } from "react-icons/hi";
 import { useEffect, useState } from "react";
-import { HiOutlineArrowLeft, HiOutlineCalendar, HiOutlineTag } from "react-icons/hi";
 
 export default function BlogPost() {
   const { blogId } = useParams();
@@ -80,15 +80,6 @@ export default function BlogPost() {
     return () => observer.disconnect();
   }, []);
 
-  // Mock data - replace with your actual data fetching
-  const post = {
-    title: "How it started vs. how it's going",
-    date: 'May 5, 2023',
-    category: 'Design',
-    content: "A short personal history as it relates to design and development, and how I've found value in the cross-section between both disciplines.",
-    image: '/images/blog/post-1.jpg'
-  };
-
   return (
     <div className="relative bg-gray-50 pt-24 pb-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -101,65 +92,175 @@ export default function BlogPost() {
           Back to Blog
         </Link>
 
-        {/* Main Content */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {/* Article */}
-          <article className="md:col-span-2 bg-white rounded-3xl p-8 border border-gray-100 shadow-sm">
-            {post.image && (
-              <div className="mb-8 rounded-2xl overflow-hidden">
-                <img 
-                  src={post.image} 
-                  alt={post.title}
-                  className="w-full h-64 object-cover"
-                />
-              </div>
-            )}
-            <h1 className="text-3xl font-semibold text-gray-900 mb-6">
-              {post.title}
-            </h1>
-            <div className="flex items-center gap-4 mb-8">
-              <div className="flex items-center text-gray-500">
-                <HiOutlineCalendar className="w-5 h-5 mr-2" />
-                {post.date}
-              </div>
-              <div className="flex items-center text-brand-purple">
-                <HiOutlineTag className="w-5 h-5 mr-2" />
-                {post.category}
-              </div>
+        <div className="flex gap-12">
+          {/* Main Content */}
+          <div className="flex-1 max-w-3xl">
+            {/* Tags */}
+            <div className="flex gap-2 mb-8">
+              {tags.map((tag, index) => (
+                <span 
+                  key={tag}
+                  className={`px-3 py-1 rounded-full text-sm ${
+                    index % 2 === 0
+                      ? "bg-brand-purple/10 text-brand-purple"
+                      : "bg-brand-blue/10 text-brand-blue"
+                  }`}
+                >
+                  {tag}
+                </span>
+              ))}
             </div>
-            <div className="prose prose-lg max-w-none">
-              {post.content}
-            </div>
-          </article>
 
-          {/* Sidebar */}
-          <aside className="space-y-6">
-            {/* Author Card */}
-            <div className="bg-gradient-to-br from-blue-50 to-purple-50 rounded-3xl p-8 border border-blue-100 shadow-sm">
-              <div className="flex items-center gap-4 mb-4">
-                <img
-                  src="/images/avatar.jpg"
-                  alt="Author"
-                  className="w-12 h-12 rounded-xl object-cover"
-                />
-                <div>
-                  <h3 className="font-semibold text-gray-900">Author Name</h3>
-                  <p className="text-sm text-gray-600">Product Designer</p>
+            <div className="flex items-center gap-4 mb-8">
+              <img 
+                src="/images/rohit-suthar.png"
+                alt="Rohit Suthar"
+                className="w-12 h-12 rounded-full object-cover"
+              />
+              <div>
+                <div className="flex items-center gap-2">
+                  <span className="font-medium text-gray-900">Rohit Suthar</span>
+                  <span className="text-brand-purple">@Porsia</span>
+                </div>
+                <div className="flex items-center text-sm text-gray-500">
+                  <span>March 30, 2024</span>
+                  <span className="mx-2">•</span>
+                  <span>5 min read</span>
                 </div>
               </div>
-              <p className="text-gray-600">
-                Short bio about the author and their expertise in the field.
-              </p>
             </div>
 
-            {/* Related Posts */}
-            <div className="bg-white rounded-3xl p-8 border border-gray-100 shadow-sm">
-              <h3 className="font-semibold text-gray-900 mb-4">Related Posts</h3>
-              <div className="space-y-4">
-                {/* Add related posts here */}
+            <h1 className="text-4xl font-medium mb-8">
+              Why Your Online Presence Matters (And How It Can Help You Grow)
+            </h1>
+
+            <div className="prose prose-lg">
+              <section id="intro">
+                <h1 className="text-3xl font-medium mb-6">
+                  Why Your Online Presence Matters (And How It Can Help You Grow)
+                </h1>
+                <p>
+                  Your portfolio isn't just a showcase — it's your silent salesperson. In today's digital age, your online presence can make or break opportunities before you even know they exist.
+                </p>
+              </section>
+
+              <section id="what-is-online-presence">
+                <h2 className="text-2xl font-medium mt-12 mb-6">
+                  What is "online presence"?
+                </h2>
+                <p>
+                  Your online presence is more than just having a website or social media profiles. It's the complete digital footprint that represents you professionally, including:
+                </p>
+                <ul className="space-y-2">
+                  <li>• Your personal website or portfolio</li>
+                  <li>• Professional social media profiles</li>
+                  <li>• Published work and content</li>
+                  <li>• Digital reputation and reviews</li>
+                </ul>
+              </section>
+
+              <section id="why-it-matters-now">
+                <h2 className="text-2xl font-medium mt-12 mb-6">
+                  Why it matters more than ever
+                </h2>
+                <p>
+                  In a post-pandemic world, digital first impressions matter more than ever:
+                </p>
+                <ul className="space-y-2">
+                  <li>• 85% of clients research online before making decisions</li>
+                  <li>• Remote work has made digital presence crucial</li>
+                  <li>• Opportunities come through digital discovery</li>
+                </ul>
+              </section>
+
+              <section id="how-it-helps-you">
+                <h2 className="text-2xl font-medium mt-12 mb-6">
+                  How it helps you
+                </h2>
+                <p>A strong online presence:</p>
+                <ul className="space-y-2">
+                  <li>• Builds credibility and trust</li>
+                  <li>• Attracts better opportunities</li>
+                  <li>• Showcases your expertise</li>
+                  <li>• Works for you 24/7</li>
+                </ul>
+              </section>
+
+              <section id="strong-presence-looks-like">
+                <h2 className="text-2xl font-medium mt-12 mb-6">
+                  What a strong presence looks like
+                </h2>
+                <p>A powerful online presence includes:</p>
+                <ul className="space-y-2">
+                  <li>• Professional portfolio website</li>
+                  <li>• Consistent brand messaging</li>
+                  <li>• Quality content that shows expertise</li>
+                  <li>• Active professional network</li>
+                </ul>
+              </section>
+
+              <section id="getting-started">
+                <h2 className="text-2xl font-medium mt-12 mb-6">
+                  Getting Started with Yours
+                </h2>
+                <p>You don't need to be a designer or a techie to build your presence.</p>
+                <p>At Porsia, we help professionals like you:</p>
+                <ul className="space-y-2">
+                  <li>• Launch beautiful AI-powered portfolio websites</li>
+                  <li>• Craft your message to attract clients</li>
+                  <li>• Build digital trust that leads to results</li>
+                </ul>
+              </section>
+
+              <section id="final-thoughts">
+                <h2 className="text-2xl font-medium mt-12 mb-6">Final Thoughts</h2>
+                <p>You don't have to be famous to be found — but you do have to show up well.</p>
+                <p className="font-medium">
+                  Your online presence is your proof, your pitch, and your power.<br />
+                  Make it count.
+                </p>
+              </section>
+
+              {/* CTA Section */}
+              <div className="bg-gradient-to-r from-brand-purple/20 to-brand-blue/20 p-8 rounded-xl mt-12">
+                <h3 className="text-xl font-medium mb-4">Ready to Build Your Presence?</h3>
+                <p className="mb-6">
+                  Want to be one of our early users? Let's build your presence together.
+                </p>
+                <a
+                  href="https://calendly.com/rohit-myporsia/30min"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-block px-6 py-3 bg-purple-600 text-white rounded-lg hover:bg-purple-700 transition-colors"
+                >
+                  Book a Free Strategy Call
+                </a>
               </div>
             </div>
-          </aside>
+          </div>
+
+          {/* Table of Contents Sidebar */}
+          <div className="hidden lg:block w-64">
+            <div className="sticky top-24">
+              <h3 className="text-sm font-medium text-gray-900 mb-4">ON THIS PAGE</h3>
+              <nav className="space-y-3">
+                {tableOfContents.map(({ id, title }) => (
+                  <a
+                    key={id}
+                    href={`#${id}`}
+                    onClick={(e) => scrollToSection(e, id)}
+                    className={`block text-sm transition-colors ${
+                      activeSection === id
+                        ? "text-brand-purple font-medium"
+                        : "text-gray-600 hover:text-brand-blue"
+                    }`}
+                  >
+                    {title}
+                  </a>
+                ))}
+              </nav>
+            </div>
+          </div>
         </div>
       </div>
     </div>
