@@ -16,7 +16,7 @@ import { image } from "framer-motion/client";
 export const meta = () => {
   const title = "Porsia - Building Your Online Presence with AI Power";
   const description = "Build an online presence that attracts clients. AI-powered website builder for coaches, freelancers, and professionals. Create a personal brand website that converts visitors into leads.";
-  const image = "https://myporsia.com/images/porsia-thumbnail.png"; // Use absolute URL
+  const image = "https://myporsia.com/images/porsia-t humbnail.png"; // Use absolute URL
 
   return [
     // Primary SEO Title & Description

@@ -1,4 +1,5 @@
 import { Link } from "@remix-run/react";
+import { FaInstagram, FaLinkedin } from "react-icons/fa";
 
 interface FooterLink {
   text: string;
@@ -17,15 +18,15 @@ const sections: FooterSection[] = [
       { text: "Features", href: "/#features" },
       { text: "Overview", href: "/#how-it-works" },
       { text: "Benefits", href: "/#benefits" },
-      { text: "Roadmap", href: "/#roadmap" }
+      // { text: "Roadmap", href: "/#roadmap" }
     ]
   },
   {
     title: "Company",
     links: [
-      { text: "About", href: "/about" },
+      // { text: "About", href: "/about" },
       { text: "Blog", href: "/blog" },
-      { text: "Careers", href: "/careers" }
+      // { text: "Careers", href: "/careers" }
     ]
   },
   {
@@ -51,10 +52,31 @@ export default function Footer() {
                 <span className="text-brand-purple">SIA</span>
               </span>
             </div>
-            <p className="text-gray-500 text-sm">
+            <p className="text-gray-500 text-sm mb-4">
               AI-powered portfolio creation —<br />
               currently in early access
             </p>
+            {/* Social Links */}
+            <div className="flex items-center gap-4">
+              <a 
+                href="https://www.instagram.com/porsiaofficial/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-400 hover:text-brand-purple transition-colors"
+                aria-label="Follow us on Instagram"
+              >
+                <FaInstagram className="w-5 h-5" />
+              </a>
+              <a 
+                href="https://www.linkedin.com/company/porsia"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-400 hover:text-brand-blue transition-colors"
+                aria-label="Follow us on LinkedIn"
+              >
+                <FaLinkedin className="w-5 h-5" />
+              </a>
+            </div>
           </div>
 
           {/* Navigation Sections */}
