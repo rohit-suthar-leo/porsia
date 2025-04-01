@@ -74,7 +74,7 @@ export default function App() {
       "name": "Porsia",
       "url": "https://myporsia.com",
       "description": "AI-powered platform to build personal portfolio websites that convert visitors into clients.",
-      "logo": "https://myporsia.com/images/logo.webp"
+      "logo": "https://myporsia.com/images/porsia-thumbnail.png"
     },
     {
       "@context": "https://schema.org",
@@ -87,8 +87,8 @@ export default function App() {
       },
       "offers": {
         "@type": "Offer",
-        "price": "0",
-        "priceCurrency": "USD",
+        "price": "20000",
+        "priceCurrency": "INR",
         "availability": "https://schema.org/InStock"
       }
     },
@@ -98,7 +98,7 @@ export default function App() {
       "url": "https://myporsia.com",
       "potentialAction": {
         "@type": "ReadAction",
-        "target": "https://myporsia.com/features"
+        "target": "https://myporsia.com/#benefits"
       }
     }
   ];
@@ -113,7 +113,8 @@ export default function App() {
         <script 
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaMarkup) }}
-        />
+       />
+        
       </head>
       <body className="bg-gray-50">
         <Navbar />
