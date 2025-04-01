@@ -11,6 +11,7 @@ import {
 import styles from "./styles/global.css";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
+import { image } from "framer-motion/client";
 
 export const meta = () => {
   const title = "Porsia - Building Your Online Presence with AI Power";
@@ -81,6 +82,7 @@ export default function App() {
       "@type": "Product",
       "name": "Porsia AI Website Builder",
       "description": "AI-powered website builder for professionals to create high-converting online presence",
+      "image": "https://myporsia.com/images/porsia-thumbnail.png",
       "brand": {
         "@type": "Brand",
         "name": "Porsia"
