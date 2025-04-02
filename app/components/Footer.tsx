@@ -46,23 +46,34 @@ export default function Footer() {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
           {/* Brand Section */}
           <div className="col-span-2 md:col-span-1">
-            <div className="flex items-center mb-4">
-              <span className="text-2xl font-bold">
-                <span className="text-brand-blue">POR</span>
-                <span className="text-brand-purple">SIA</span>
-              </span>
+            {/* Logo */}
+            <div className="mb-6">
+              <div className="inline-flex items-center px-4 py-2 bg-white rounded-2xl border border-gray-100 shadow-sm">
+                <span className="text-2xl font-bold bg-gradient-to-r from-brand-blue to-brand-purple bg-clip-text text-transparent">
+                  PORSIA
+                </span>
+              </div>
             </div>
-            <p className="text-gray-500 text-sm mb-4">
-              AI-powered portfolio creation —<br />
-              currently in early access
-            </p>
+
+            {/* Description */}
+            <div className="space-y-4 mb-6">
+              {/* <p className="text-gray-600">
+                AI-powered portfolio creation
+              </p> */}
+              <div className="inline-block px-3 py-1 bg-brand-purple/10 rounded-full">
+                <p className="text-sm text-brand-purple">
+                  Currently in early access
+                </p>
+              </div>
+            </div>
+
             {/* Social Links */}
-            <div className="flex items-center gap-4">
+            <div className="flex items-center gap-3">
               <a 
                 href="https://www.instagram.com/porsiaofficial/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-400 hover:text-brand-purple transition-colors"
+                className="p-2 rounded-xl bg-gray-50 text-gray-400 hover:text-brand-purple hover:bg-brand-purple/10 transition-colors"
                 aria-label="Follow us on Instagram"
               >
                 <FaInstagram className="w-5 h-5" />
@@ -71,7 +82,7 @@ export default function Footer() {
                 href="https://www.linkedin.com/company/porsia"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-400 hover:text-brand-blue transition-colors"
+                className="p-2 rounded-xl bg-gray-50 text-gray-400 hover:text-brand-blue hover:bg-brand-blue/10 transition-colors"
                 aria-label="Follow us on LinkedIn"
               >
                 <FaLinkedin className="w-5 h-5" />
@@ -99,11 +110,18 @@ export default function Footer() {
           ))}
         </div>
 
-        {/* Copyright */}
+        {/* Copyright Section */}
         <div className="mt-12 pt-8 border-t border-gray-100">
-          <p className="text-center text-gray-500">
-            © 2024 Porsia. All rights reserved.
-          </p>
+          <div className="flex flex-col md:flex-row items-center justify-between gap-4">
+            <div className="text-gray-500 text-sm">
+              Copyright © {new Date().getFullYear()} Porsia. All rights reserved.
+            </div>
+            <div className="flex items-center gap-6">
+              <span className="text-gray-400 text-sm">
+                Made with ❤️ in India
+              </span>
+            </div>
+          </div>
         </div>
       </div>
     </footer>
