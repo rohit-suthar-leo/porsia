@@ -56,19 +56,65 @@ export default function BlogPost() {
       readTime: '5 min read',
       tags: ["Online Presence", "Personal Branding", "Professional Growth", "Digital Marketing"],
       content: {
-        intro: "Your portfolio isn't just a showcase — it's your silent salesperson...",
+        intro: "Your portfolio isn't just a showcase — it's your silent salesperson. Learn why showing up online the right way can boost your credibility, attract clients, and grow your income.",
         sections: [
-          // ... existing sections for first blog ...
+          {
+            id: 'what-is-online-presence',
+            title: "What is \"online presence\"?",
+            content: `Your online presence is the sum of all digital touchpoints where potential clients can find and interact with you. It's your digital first impression, your 24/7 representative, and often, your first chance to build trust.`
+          },
+          {
+            id: 'why-it-matters-now',
+            title: "Why it matters more than ever",
+            content: `In today's digital-first world, your online presence is often the first (and sometimes only) chance to make an impression. Strong online presence:
+            • Builds credibility before the first conversation
+            • Attracts better opportunities
+            • Works for you even when you're not working
+            • Sets you apart in a crowded market`
+          },
+          {
+            id: 'how-it-helps-you',
+            title: "How it helps you grow",
+            content: `A strong online presence:
+            • Attracts ideal clients who already trust you
+            • Showcases your expertise 24/7
+            • Builds authority in your field
+            • Creates opportunities you wouldn't find otherwise`
+          },
+          {
+            id: 'strong-presence-looks-like',
+            title: "What a strong presence looks like",
+            content: `A powerful online presence includes:
+            • Professional portfolio website
+            • Consistent brand messaging
+            • Quality content that shows expertise
+            • Clear path for potential clients
+            • Social proof and testimonials`
+          },
+          {
+            id: 'getting-started',
+            title: "Getting started with yours",
+            content: `Building your presence doesn't have to be overwhelming. Start with:
+            • A clean, professional portfolio site
+            • Clear messaging about who you help and how
+            • Simple way for clients to contact you
+            • Regular content that showcases your expertise`
+          },
+          {
+            id: 'final-thoughts',
+            title: "Final thoughts",
+            content: `Your online presence isn't just about looking professional — it's about creating opportunities. In a digital-first world, it's your most powerful tool for building trust and attracting clients.`
+          }
         ]
       }
     },
     'fitness-coach-portfolio': {
       title: "Why Fitness Coaches Need a Portfolio (Now More Than Ever)",
-      date: 'March 30, 2024',
+      date: 'April 2, 2024',
       author: 'Rohit Suthar',
       role: 'Founder',
       readTime: '4 min read',
-      tags: ["Fitness Coaching", "Personal Branding", "Portfolio", "Business Growth"],
+      tags: ["Personal Branding", "Online Presence", "Fitness Business", "Lead Generation", "Client Trust", "Fitness Marketing", "Coach Website"],
       content: {
         intro: `In today's digital-first world, building a powerful online presence isn't optional — it's essential. And if you're a fitness coach, your personal brand is your business. While social media is a great starting point, it's not enough to turn interest into trust — or followers into paying clients.`,
         sections: [
