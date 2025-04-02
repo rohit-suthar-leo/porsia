@@ -8,12 +8,14 @@ export const meta: MetaFunction = ({ params }) => {
     '1': {
       title: "Why Your Online Presence Matters",
       description: "Your portfolio isn't just a showcase — it's your silent salesperson. Learn why showing up online the right way can boost your credibility, attract clients, and grow your income.",
-      tags: ["Online Presence", "Personal Branding", "Professional Growth", "Digital Marketing", "Lead Generation", "Client Trust", "Portfolio Website"]
+      tags: ["Online Presence", "Personal Branding", "Professional Growth", "Digital Marketing", "Lead Generation", "Client Trust", "Portfolio Website"],
+      image: "https://myporsia.com/images/porsia-thumbnail.png"
     },
     'fitness-coach-portfolio': {
       title: "Why Fitness Coaches Need a Portfolio (Now More Than Ever)",
       description: "In today's digital-first world, building a powerful online presence isn't optional — it's essential. Learn why fitness coaches need a professional portfolio to turn followers into clients.",
-      tags: ["Personal Branding", "Online Presence", "Fitness Business", "Lead Generation", "Client Trust", "Fitness Marketing", "Coach Website"]
+      tags: ["Personal Branding", "Online Presence", "Fitness Business", "Lead Generation", "Client Trust", "Fitness Marketing", "Coach Website"],
+      image: "https://myporsia.com/images/porsia-thumbnail.png"
     }
   };
 
@@ -35,11 +37,16 @@ export const meta: MetaFunction = ({ params }) => {
     { property: "og:type", content: "article" },
     { property: "og:title", content: post.title },
     { property: "og:description", content: post.description },
+    { property: "og:image", content: post.image },
+    { property: "og:image:width", content: "1200" },
+    { property: "og:image:height", content: "630" },
+    { property: "og:image:type", content: "image/png" },
     
     // Twitter
     { name: "twitter:card", content: "summary_large_image" },
     { name: "twitter:title", content: post.title },
-    { name: "twitter:description", content: post.description }
+    { name: "twitter:description", content: post.description },
+    { name: "twitter:image", content: post.image }
   ];
 };
 
