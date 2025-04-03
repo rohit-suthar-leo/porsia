@@ -15,11 +15,13 @@ import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import { image } from "framer-motion/client";
 import { HiOutlineArrowRight } from "react-icons/hi";
+import NotFound from "./routes/404";
 
 export const meta = () => {
   const title = "Porsia - Building Your Online Presence with AI Power";
   const description = "Build an online presence that attracts clients. AI-powered website builder for coaches, freelancers, and professionals. Create a personal brand website that converts visitors into leads.";
-  const image = "https://myporsia.com/images/porsia-thumbnail.png"; // Use absolute URL
+  const image = "https://myporsia.com/images/porsia-thumbnail.png";
+  const logo = "https://myporsia.com/images/logo.webp";
 
   return [
     // Primary SEO Title & Description
@@ -27,8 +29,8 @@ export const meta = () => {
     { name: "description", content: description },
 
     // Indexing Directives
-    { name: "robots", content: "index, follow" },
-    { name: "googlebot", content: "index, follow" },
+    { name: "robots", content: "index, follow, max-image-preview:large" },
+    { name: "googlebot", content: "index, follow, max-image-preview:large" },
     { name: "google", content: "notranslate" },
 
     // Open Graph Tags
@@ -41,6 +43,7 @@ export const meta = () => {
     { property: "og:image:width", content: "1200" },
     { property: "og:image:height", content: "630" },
     { property: "og:image:type", content: "image/png" },
+    { property: "og:logo", content: logo },
 
     // Twitter Cards
     { name: "twitter:card", content: "summary_large_image" },
@@ -48,6 +51,10 @@ export const meta = () => {
     { name: "twitter:title", content: title },
     { name: "twitter:description", content: description },
     { name: "twitter:image", content: image },
+
+    // Image Meta Tags
+    { name: "image", content: image },
+    { itemProp: "image", content: image },
 
     // Keywords
     { 
@@ -90,69 +97,57 @@ export function ErrorBoundary() {
   if (isRouteErrorResponse(error)) {
     if (error.status === 404) {
       return (
-        <div className="min-h-screen bg-white flex items-center justify-center px-4">
-          <div className="max-w-lg w-full text-center">
-            <h1 className="text-9xl font-bold text-brand-blue mb-4">404</h1>
-            <h2 className="text-3xl font-medium text-gray-900 mb-6">Page Not Found</h2>
-            <p className="text-gray-600 mb-8">
-              The page you're looking for doesn't exist or has been moved.
-            </p>
-            
-            <div className="space-y-4">
-              <Link 
-                to="/features" 
-                className="inline-flex items-center px-6 py-3 bg-brand-blue text-white rounded-xl hover:bg-blue-700 transition-all w-full justify-center"
-              >
-                Features
-                <HiOutlineArrowRight className="ml-2 w-5 h-5" />
-              </Link>
-              
-              <Link 
-                to="/contact" 
-                className="inline-flex items-center px-6 py-3 bg-brand-blue text-white rounded-xl hover:bg-blue-700 transition-all w-full justify-center"
-              >
-                Contact Us
-                <HiOutlineArrowRight className="ml-2 w-5 h-5" />
-              </Link>
-              
-              <Link 
-                to="/privacy" 
-                className="inline-flex items-center px-6 py-3 bg-brand-blue text-white rounded-xl hover:bg-blue-700 transition-all w-full justify-center"
-              >
-                Privacy Policy
-                <HiOutlineArrowRight className="ml-2 w-5 h-5" />
-              </Link>
-              
-              <Link 
-                to="/" 
-                className="inline-flex items-center px-6 py-3 bg-gray-100 text-gray-900 rounded-xl hover:bg-gray-200 transition-all w-full justify-center"
-              >
-                Back to Home
-                <HiOutlineArrowRight className="ml-2 w-5 h-5" />
-              </Link>
-            </div>
-          </div>
-        </div>
+        <html lang="en">
+          <head>
+            <meta charSet="utf-8" />
+            <meta name="viewport" content="width=device-width,initial-scale=1" />
+            <Meta />
+            <Links />
+          </head>
+          <body className="bg-gray-50">
+            <Navbar />
+            <NotFound />
+            <Footer />
+            <ScrollRestoration />
+            <Scripts />
+            <LiveReload />
+          </body>
+        </html>
       );
     }
   }
 
   return (
-    <div className="min-h-screen bg-white flex items-center justify-center px-4">
-      <div className="max-w-lg w-full text-center">
-        <h1 className="text-3xl font-medium text-gray-900 mb-6">Something went wrong</h1>
-        <p className="text-gray-600 mb-8">
-          We're sorry, but something went wrong. Please try again later.
-        </p>
-        <Link 
-          to="/" 
-          className="inline-flex items-center px-6 py-3 bg-brand-blue text-white rounded-xl hover:bg-blue-700 transition-all"
-        >
-          Back to Home
-          <HiOutlineArrowRight className="ml-2 w-5 h-5" />
-        </Link>
-      </div>
-    </div>
+    <html lang="en">
+      <head>
+        <meta charSet="utf-8" />
+        <meta name="viewport" content="width=device-width,initial-scale=1" />
+        <Meta />
+        <Links />
+      </head>
+      <body className="bg-gray-50">
+        <Navbar />
+        <div className="min-h-screen bg-white flex items-center justify-center px-4">
+          <div className="max-w-lg w-full text-center">
+            <h1 className="text-3xl font-medium text-gray-900 mb-6">Something went wrong</h1>
+            <p className="text-gray-600 mb-8">
+              We're sorry, but something went wrong. Please try again later.
+            </p>
+            <Link 
+              to="/" 
+              className="inline-flex items-center px-6 py-3 bg-brand-blue text-white rounded-xl hover:bg-blue-700 transition-all"
+            >
+              Back to Home
+              <HiOutlineArrowRight className="ml-2 w-5 h-5" />
+            </Link>
+          </div>
+        </div>
+        <Footer />
+        <ScrollRestoration />
+        <Scripts />
+        <LiveReload />
+      </body>
+    </html>
   );
 }
 
@@ -164,17 +159,25 @@ export default function App() {
       "name": "Porsia",
       "url": "https://myporsia.com",
       "description": "AI-powered platform to build personal portfolio websites that convert visitors into clients.",
-      "logo": "https://myporsia.com/images/porsia-thumbnail.png"
+      "logo": "https://myporsia.com/images/logo.webp",
+      "image": [
+        "https://myporsia.com/images/porsia-thumbnail.png",
+        "https://myporsia.com/images/logo.webp"
+      ]
     },
     {
       "@context": "https://schema.org",
       "@type": "Product",
       "name": "Porsia AI Website Builder",
       "description": "AI-powered website builder for professionals to create high-converting online presence",
-      "image": "https://myporsia.com/images/porsia-thumbnail.png",
+      "image": [
+        "https://myporsia.com/images/porsia-thumbnail.png",
+        "https://myporsia.com/images/logo.webp"
+      ],
       "brand": {
         "@type": "Brand",
-        "name": "Porsia"
+        "name": "Porsia",
+        "logo": "https://myporsia.com/images/logo.webp"
       },
       "offers": {
         "@type": "Offer",
@@ -190,7 +193,25 @@ export default function App() {
       "potentialAction": {
         "@type": "ReadAction",
         "target": "https://myporsia.com/#benefits"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Porsia",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://myporsia.com/images/logo.webp"
+        }
       }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "ImageObject",
+      "contentUrl": "https://myporsia.com/images/logo.webp",
+      "name": "Porsia Logo",
+      "description": "Official logo of Porsia - AI-powered website builder",
+      "encodingFormat": "image/webp",
+      "height": "512",
+      "width": "512"
     }
   ];
 

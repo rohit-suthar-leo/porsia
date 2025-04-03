@@ -1,21 +1,32 @@
 # Allow all crawlers
 User-agent: *
 Allow: /
+Allow: /images/
+Allow: /*.webp$
+Allow: /*.png$
+Allow: /*.jpg$
+Allow: /*.jpeg$
+Allow: /*.svg$
 
 # Disallow admin and private paths
 Disallow: /admin/
 Disallow: /private/
 Disallow: /api/
 
+# Specific rules for Googlebot-Image
+User-agent: Googlebot-Image
+Allow: /images/
+Allow: /*.webp$
+Allow: /*.png$
+Allow: /*.jpg$
+Allow: /*.jpeg$
+Allow: /*.svg$
+
 # Sitemap location
 Sitemap: https://myporsia.com/sitemap.xml
-
-# Crawl-delay for better server performance
-Crawl-delay: 1
 
 # Host directive
 Host: https://myporsia.com
 
-# Allow all image crawlers
-User-agent: Googlebot-Image
-Allow: / 
+# Crawl-delay for better server performance
+Crawl-delay: 1 

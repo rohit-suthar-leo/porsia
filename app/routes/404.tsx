@@ -13,7 +13,7 @@ export default function NotFound() {
         
         <div className="space-y-4">
           <Link 
-            to="/features" 
+            to="/#features" 
             className="inline-flex items-center px-6 py-3 bg-brand-blue text-white rounded-xl hover:bg-blue-700 transition-all w-full justify-center"
           >
             Features
@@ -21,20 +21,14 @@ export default function NotFound() {
           </Link>
           
           <Link 
-            to="/contact" 
+            to="/#contact-form" 
             className="inline-flex items-center px-6 py-3 bg-brand-blue text-white rounded-xl hover:bg-blue-700 transition-all w-full justify-center"
           >
             Contact Us
             <HiOutlineArrowRight className="ml-2 w-5 h-5" />
           </Link>
           
-          <Link 
-            to="/privacy" 
-            className="inline-flex items-center px-6 py-3 bg-brand-blue text-white rounded-xl hover:bg-blue-700 transition-all w-full justify-center"
-          >
-            Privacy Policy
-            <HiOutlineArrowRight className="ml-2 w-5 h-5" />
-          </Link>
+         
           
           <Link 
             to="/" 
