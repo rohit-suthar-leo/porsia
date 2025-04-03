@@ -11,4 +11,11 @@ Disallow: /api/
 Sitemap: https://myporsia.com/sitemap.xml
 
 # Crawl-delay for better server performance
-Crawl-delay: 1 
+Crawl-delay: 1
+
+# Host directive
+Host: https://myporsia.com
+
+# Allow all image crawlers
+User-agent: Googlebot-Image
+Allow: / 
