@@ -34,7 +34,7 @@ export default function Benefits() {
               </div>
               <h3 className="text-xl font-semibold text-gray-900">Save Time</h3>
             </div>
-            <p className="text-gray-600">Launch your online presence in days — not weeks or months.</p>
+            <p className="text-gray-600"> Build a high-converting personal brand site in days. Highlight your expertise, gain client trust, and generate leads — all without the tech headache.</p>
           </div>
 
           {/* Build Credibility */}

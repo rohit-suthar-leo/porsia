@@ -21,7 +21,7 @@ export const meta = () => {
   const title = "Porsia - Building Your Online Presence with AI Power";
   const description = "Build an online presence that attracts clients. AI-powered website builder for coaches, freelancers, and professionals. Create a personal brand website that converts visitors into leads.";
   const image = "https://myporsia.com/images/porsia-thumbnail.png";
-  const logo = "https://myporsia.com/images/logo.webp";
+  const logo = "https://myporsia.com/images/logo.png";
 
   return [
     // Primary SEO Title & Description
@@ -65,6 +65,7 @@ export const meta = () => {
     // Additional Meta Tags
     { name: "viewport", content: "width=device-width, initial-scale=1" },
     { name: "theme-color", content: "#ffffff" },
+    { name: "msapplication-TileColor", content: "#ffffff" },
     { name: "format-detection", content: "telephone=no" },
     { name: "mobile-web-app-capable", content: "yes" },
     { name: "apple-mobile-web-app-capable", content: "yes" },
@@ -84,11 +85,14 @@ export const links: LinksFunction = () => [
   },
   // Web app manifest for PWA support
   { rel: "manifest", href: "/site.webmanifest" },
-  // Remove smaller sizes to force browser to use large one
+  // Apple Touch Icon
   { rel: "apple-touch-icon", sizes: "180x180", href: "/apple-touch-icon.png" },
+  // Standard favicons
   { rel: "icon", type: "image/png", sizes: "32x32", href: "/favicon-32x32.png" },
   { rel: "icon", type: "image/png", sizes: "16x16", href: "/favicon-16x16.png" },
   { rel: "icon", type: "image/x-icon", href: "/favicon.ico" },
+  // Microsoft Tiles
+  { rel: "msapplication-TileImage", href: "/android-chrome-192x192.png" }
 ];
 
 export function ErrorBoundary() {
@@ -159,10 +163,20 @@ export default function App() {
       "name": "Porsia",
       "url": "https://myporsia.com",
       "description": "AI-powered platform to build personal portfolio websites that convert visitors into clients.",
-      "logo": "https://myporsia.com/images/logo.webp",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://myporsia.com/images/logo.png",
+        "width": "512",
+        "height": "512",
+        "caption": "Porsia Logo"
+      },
       "image": [
         "https://myporsia.com/images/porsia-thumbnail.png",
-        "https://myporsia.com/images/logo.webp"
+        "https://myporsia.com/images/logo.png"
+      ],
+      "sameAs": [
+        "https://www.instagram.com/porsiaofficial/",
+        "https://www.linkedin.com/company/porsia"
       ]
     },
     {
@@ -172,12 +186,17 @@ export default function App() {
       "description": "AI-powered website builder for professionals to create high-converting online presence",
       "image": [
         "https://myporsia.com/images/porsia-thumbnail.png",
-        "https://myporsia.com/images/logo.webp"
+        "https://myporsia.com/images/logo.png"
       ],
       "brand": {
         "@type": "Brand",
         "name": "Porsia",
-        "logo": "https://myporsia.com/images/logo.webp"
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://myporsia.com/images/logo.png",
+          "width": "512",
+          "height": "512"
+        }
       },
       "offers": {
         "@type": "Offer",
@@ -199,17 +218,19 @@ export default function App() {
         "name": "Porsia",
         "logo": {
           "@type": "ImageObject",
-          "url": "https://myporsia.com/images/logo.webp"
+          "url": "https://myporsia.com/images/logo.png",
+          "width": "512",
+          "height": "512"
         }
       }
     },
     {
       "@context": "https://schema.org",
       "@type": "ImageObject",
-      "contentUrl": "https://myporsia.com/images/logo.webp",
+      "contentUrl": "https://myporsia.com/images/logo.png",
       "name": "Porsia Logo",
       "description": "Official logo of Porsia - AI-powered website builder",
-      "encodingFormat": "image/webp",
+      "encodingFormat": "image/png",
       "height": "512",
       "width": "512"
     }
@@ -222,11 +243,12 @@ export default function App() {
         <meta name="viewport" content="width=device-width,initial-scale=1" />
         <Meta />
         <Links />
-        <script 
+        <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaMarkup) }}
-       />
-        
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(schemaMarkup[0])
+          }}
+        />
       </head>
       <body className="bg-gray-50">
         <Navbar />

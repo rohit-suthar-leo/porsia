@@ -33,8 +33,8 @@ export default function Features() {
             <div className="bg-white/80 backdrop-blur w-12 h-12 rounded-xl flex items-center justify-center mb-6 border border-purple-100">
               <HiOutlineLightningBolt className="w-6 h-6 text-brand-purple" />
             </div>
-            <h3 className="text-xl font-semibold mb-3 text-gray-900">Fast, Frictionless Setup</h3>
-            <p className="text-gray-600">Get your portfolio online in minutes, not days. No tech skills. Just content + click → you're live.</p>
+            <h3 className="text-xl font-semibold mb-3 text-gray-900">Ready. Set. Grow.</h3>
+            <p className="text-gray-600">Go live fast and start attracting leads right away. </p>
           </div>
 
           {/* Credibility Stats */}

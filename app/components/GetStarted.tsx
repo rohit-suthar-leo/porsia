@@ -43,7 +43,7 @@ export default function GetStarted() {
   };
 
   return (
-    <div className="relative bg-white py-24" id="contact-form">
+    <div className="relative bg-white py-24 mt-24" id="contact-form">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="max-w-2xl">
