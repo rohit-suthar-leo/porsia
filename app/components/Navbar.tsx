@@ -58,7 +58,7 @@ export default function Navbar() {
           </Link>
 
           {/* Center Navigation - Pill Container */}
-          <div className="bg-gray-100 rounded-full px-2 py-1 shadow-sm">
+          <div className="bg-gray-200 rounded-full px-2 py-1 shadow-sm">
             <div className="flex items-center relative">
               {[
                 { path: '/', label: 'Home' },
@@ -73,7 +73,7 @@ export default function Navbar() {
                   className={`relative px-4 py-1.5 text-sm font-medium transition-all ${
                     isActive(path)
                       ? 'text-gray-900 bg-white rounded-full shadow-sm'
-                      : 'text-gray-600 hover:text-gray-800'
+                      : 'text-gray-700 hover:text-gray-900'
                   }`}
                 >
                   {label}
@@ -85,7 +85,7 @@ export default function Navbar() {
           {/* Contact Button */}
           <Link 
             to="/#contact-form" 
-            className="text-sm font-medium text-gray-600 hover:text-gray-900 transition-colors"
+            className="text-sm font-medium text-gray-700 hover:text-gray-900 transition-colors"
           >
             Contact
           </Link>

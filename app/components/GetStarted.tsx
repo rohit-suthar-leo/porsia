@@ -48,7 +48,7 @@ export default function GetStarted() {
         {/* Header */}
         <div className="max-w-2xl">
           <h2 className="text-5xl font-medium mb-6">Get in touch</h2>
-          <p className="text-xl text-gray-600 mb-12">
+          <p className="text-xl text-gray-700 mb-12">
             If you have any questions or you'd like to find out more about our services, please get in touch.
           </p>
         </div>
@@ -61,7 +61,7 @@ export default function GetStarted() {
                 <h3 className="text-lg font-medium text-gray-900 mb-2">Contact details:</h3>
                 <a 
                   href="mailto:hello@myporsia.com"
-                  className="text-gray-600 hover:text-brand-blue transition-colors"
+                  className="text-gray-700 hover:text-brand-blue transition-colors"
                 >
                   hello@myporsia.com
                 </a>
@@ -69,7 +69,7 @@ export default function GetStarted() {
 
               <div>
                 <h3 className="text-lg font-medium text-gray-900 mb-2">Office address:</h3>
-                <address className="text-gray-600 not-italic">
+                <address className="text-gray-700 not-italic">
                   Bengaluru, Karnataka<br />
                   India
                 </address>
@@ -82,7 +82,7 @@ export default function GetStarted() {
                     href="https://www.instagram.com/porsiaofficial/"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-gray-400 hover:text-brand-purple transition-colors"
+                    className="text-gray-600 hover:text-brand-purple transition-colors"
                   >
                     Instagram
                   </a>
@@ -90,7 +90,7 @@ export default function GetStarted() {
                     href="https://www.linkedin.com/company/porsia"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-gray-400 hover:text-brand-blue transition-colors"
+                    className="text-gray-600 hover:text-brand-blue transition-colors"
                   >
                     LinkedIn
                   </a>
@@ -102,7 +102,7 @@ export default function GetStarted() {
           {/* Contact Form */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:col-span-2">
             {/* Form Section */}
-            <div className="bg-white rounded-3xl p-8 border border-gray-100 shadow-sm md:col-span-2">
+            <div className="bg-white rounded-3xl p-8 border border-gray-200 shadow-sm md:col-span-2">
               <form 
                 action="https://getform.io/f/bxowgkwa"
                 method="POST"
@@ -119,7 +119,7 @@ export default function GetStarted() {
                       id="firstName"
                       name="firstName"
                       required
-                      className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:ring-2 focus:ring-brand-purple/20 focus:border-brand-purple transition-colors"
+                      className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-brand-purple/20 focus:border-brand-purple transition-colors"
                     />
                   </div>
 
@@ -132,7 +132,7 @@ export default function GetStarted() {
                       id="lastName"
                       name="lastName"
                       required
-                      className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:ring-2 focus:ring-brand-purple/20 focus:border-brand-purple transition-colors"
+                      className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-brand-purple/20 focus:border-brand-purple transition-colors"
                     />
                   </div>
                 </div>
@@ -146,7 +146,7 @@ export default function GetStarted() {
                     id="email"
                     name="email"
                     required
-                    className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:ring-2 focus:ring-brand-purple/20 focus:border-brand-purple transition-colors"
+                    className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-brand-purple/20 focus:border-brand-purple transition-colors"
                   />
                 </div>
 
@@ -158,7 +158,7 @@ export default function GetStarted() {
                     id="message"
                     name="message"
                     rows={6}
-                    className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:ring-2 focus:ring-brand-purple/20 focus:border-brand-purple transition-colors"
+                    className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-brand-purple/20 focus:border-brand-purple transition-colors"
                   ></textarea>
                 </div>
 
@@ -170,7 +170,7 @@ export default function GetStarted() {
                     required
                     className="rounded border-gray-300 text-brand-purple focus:ring-brand-purple"
                   />
-                  <label htmlFor="privacy" className="text-sm text-gray-600">
+                  <label htmlFor="privacy" className="text-sm text-gray-700">
                     I agree with the privacy statement
                   </label>
                 </div>
