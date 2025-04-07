@@ -25,7 +25,7 @@ Allow: /*.jpeg$
 Allow: /*.svg$
 
 # Sitemap location
-Sitemap: https://porsia.ai/sitemap.xml
+Sitemap: https://myporsia.com/sitemap.xml
 
 # Host directive
 Host: https://myporsia.com
