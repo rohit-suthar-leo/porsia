@@ -52,9 +52,9 @@ export default function Hero() {
         {/* Stats Card */}
         <div className="bg-white rounded-3xl p-8 border border-gray-100 shadow-sm hover:shadow-md transition-all">
           <div className="flex items-center gap-2 mb-4">
-            <h3 className="text-xl font-semibold text-gray-900">
+            <h2 className="text-xl font-semibold text-gray-900">
               Trusted by Growing Professionals
-            </h3>
+            </h2>
             <HiOutlineUserGroup className="w-6 h-6 text-brand-purple" />
           </div>
           <div className="space-y-4">

@@ -60,8 +60,8 @@ export default function Footer() {
               {/* <p className="text-gray-600">
                 AI-powered portfolio creation
               </p> */}
-              <div className="inline-block px-3 py-1 bg-brand-purple/20 rounded-full">
-                <p className="text-sm text-brand-purple font-medium">
+              <div className="inline-block px-3 py-1 bg-purple-600 rounded-full">
+                <p className="text-sm text-white font-medium">
                   Currently in early access
                 </p>
               </div>
