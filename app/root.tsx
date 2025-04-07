@@ -13,6 +13,7 @@ import {
 import styles from "./styles/global.css";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
+import ProductHuntBadge from "./components/ProductHuntBadge";
 import { image } from "framer-motion/client";
 import { HiOutlineArrowRight } from "react-icons/hi";
 import NotFound from "./routes/404";
@@ -59,7 +60,7 @@ export const meta = () => {
     // Keywords
     { 
       name: "keywords", 
-      content: "build online presence to get clients, personal website for lead generation, AI portfolio website for sales, create website to attract clients, convert visitors into leads, get coaching clients through website, professional website that sells, digital presence for personal brand" 
+      content: "website builder, non-technical website creation, platform for coaches, platform for consultants, small business online presence, personal brand building, drag-and-drop website editor, built-in marketing tools, automated SEO practices, lead generation platform, content management system, user-friendly website design, online credibility tools, code-free website design, integrated online marketing, online presence development, branding for small businesses, DIY website design, website creation for non-techies, online brand growth" 
     },
 
     // Additional Meta Tags
@@ -112,6 +113,7 @@ export function ErrorBoundary() {
             <Navbar />
             <NotFound />
             <Footer />
+            <ProductHuntBadge />
             <ScrollRestoration />
             <Scripts />
             <LiveReload />
@@ -147,6 +149,7 @@ export function ErrorBoundary() {
           </div>
         </div>
         <Footer />
+        <ProductHuntBadge />
         <ScrollRestoration />
         <Scripts />
         <LiveReload />
@@ -256,6 +259,7 @@ export default function App() {
           <Outlet />
         </main>
         <Footer />
+        <ProductHuntBadge />
         {/* <Link to="/blog">Blog</Link> */}
         <ScrollRestoration />
         <Scripts />

@@ -1,7 +1,9 @@
 # Allow all crawlers
 User-agent: *
 Allow: /
+Allow: /sitemap.xml
 Allow: /images/
+Allow: /logo.png
 Allow: /*.webp$
 Allow: /*.png$
 Allow: /*.jpg$
@@ -23,10 +25,10 @@ Allow: /*.jpeg$
 Allow: /*.svg$
 
 # Sitemap location
-Sitemap: https://myporsia.com/sitemap.xml
+Sitemap: https://porsia.ai/sitemap.xml
 
 # Host directive
 Host: https://myporsia.com
 
 # Crawl-delay for better server performance
-Crawl-delay: 1 
+Crawl-delay: 10 
