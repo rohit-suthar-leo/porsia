@@ -252,7 +252,39 @@ export default function App() {
       <head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width,initial-scale=1" />
-        <meta name="description" content="Build an online presence that attracts clients. AI-powered website builder for coaches, freelancers, and professionals. Create a personal brand website that converts visitors into leads." />
+        
+        {/* Primary SEO Meta Tags */}
+        <meta name="description" content="Create a high-converting personal brand website that builds trust and attracts clients. Perfect for coaches and freelancers. Start your free trial with Porsia today!" />
+        <meta name="keywords" content="website builder, platform for coaches, personal brand building, lead generation platform, online presence development" />
+        
+        {/* Robots Meta Tags */}
+        <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+        <meta name="googlebot" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+        <meta name="bingbot" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+        
+        {/* Open Graph Tags */}
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://myporsia.com" />
+        <meta property="og:site_name" content="Porsia" />
+        <meta property="og:title" content="Porsia.ai | Turn Your Online Presence into Client Opportunities" />
+        <meta property="og:description" content="Create a high-converting personal brand website that builds trust and attracts clients. Perfect for coaches and freelancers. Start your free trial with Porsia today!" />
+        <meta property="og:image" content="https://www.myporsia.com/images/porsia-thumbnail.png" />
+        <meta property="og:image:secure_url" content="https://www.myporsia.com/images/porsia-thumbnail.png" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta property="og:image:type" content="image/png" />
+        <meta property="og:image:alt" content="Porsia - Build your professional online presence" />
+        
+        {/* Twitter Card Tags */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:site" content="@Porsiaofficial" />
+        <meta name="twitter:creator" content="@Porsiaofficial" />
+        <meta name="twitter:domain" content="myporsia.com" />
+        <meta name="twitter:title" content="Porsia.ai | Turn Your Online Presence into Client Opportunities" />
+        <meta name="twitter:description" content="Create a high-converting personal brand website that builds trust and attracts clients. Perfect for coaches and freelancers. Start your free trial with Porsia today!" />
+        <meta name="twitter:image" content="https://www.myporsia.com/images/porsia-thumbnail.png" />
+        <meta name="twitter:image:alt" content="Porsia.ai - AI-powered website builder for professionals" />
+        
         <Meta />
         <Links />
         <script
