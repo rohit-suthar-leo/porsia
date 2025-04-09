@@ -19,9 +19,9 @@ import { HiOutlineArrowRight } from "react-icons/hi";
 import NotFound from "./routes/404";
 
 export const meta = () => {
-  const title = "Porsia - Building Your Online Presence with AI Power";
-  const description = "Build an online presence that attracts clients. AI-powered website builder for coaches, freelancers, and professionals. Create a personal brand website that converts visitors into leads.";
-  const image = "https://myporsia.com/images/porsia-thumbnail.png";
+  const title = "Porsia.ai | Turn Your Online Presence into Client Opportunities";
+  const description = "Create a high-converting personal brand website that builds trust and attracts clients. Perfect for coaches and freelancers. Start your free trial with Porsia today!";
+  const image = "https://www.myporsia.com/images/porsia-thumbnail.png";
   const logo = "https://myporsia.com/images/logo.png";
 
   return [
@@ -29,9 +29,10 @@ export const meta = () => {
     { title },
     { name: "description", content: description },
 
-    // Indexing Directives
-    { name: "robots", content: "index, follow, max-image-preview:large" },
-    { name: "googlebot", content: "index, follow, max-image-preview:large" },
+    // Enhanced Indexing Directives
+    { name: "robots", content: "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" },
+    { name: "googlebot", content: "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" },
+    { name: "bingbot", content: "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" },
     { name: "google", content: "notranslate" },
 
     // Open Graph Tags
@@ -41,17 +42,22 @@ export const meta = () => {
     { property: "og:title", content: title },
     { property: "og:description", content: description },
     { property: "og:image", content: image },
+    { property: "og:image:secure_url", content: image },
     { property: "og:image:width", content: "1200" },
     { property: "og:image:height", content: "630" },
     { property: "og:image:type", content: "image/png" },
+    { property: "og:image:alt", content: "Porsia - Build your professional online presence" },
     { property: "og:logo", content: logo },
 
     // Twitter Cards
     { name: "twitter:card", content: "summary_large_image" },
+    { name: "twitter:site", content: "@Porsiaofficial" },
+    { name: "twitter:creator", content: "@Porsiaofficial" },
     { name: "twitter:domain", content: "myporsia.com" },
     { name: "twitter:title", content: title },
     { name: "twitter:description", content: description },
     { name: "twitter:image", content: image },
+    { name: "twitter:image:alt", content: "Porsia.ai - AI-powered website builder for professionals" },
 
     // Image Meta Tags
     { name: "image", content: image },
@@ -77,6 +83,8 @@ export const meta = () => {
 
 export const links: LinksFunction = () => [
   { rel: "stylesheet", href: styles },
+  // Canonical URL
+  { rel: "canonical", href: "https://myporsia.com" },
   // Primary large favicon
   { 
     rel: "icon",
