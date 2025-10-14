@@ -1,192 +1,119 @@
-import { 
-  HiOutlineSparkles,
-  HiOutlineArrowRight,
-  HiOutlineMail
-} from "react-icons/hi";
+import { useFetcher, useNavigate } from "@remix-run/react";
+import { useEffect } from "react";
 
 export default function GetStarted() {
-  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
-    const form = event.currentTarget;
-    const formData = new FormData(form);
+  const fetcher = useFetcher();
+  const navigate = useNavigate();
+  const isSubmitting = fetcher.state === "submitting";
 
-    try {
-      const response = await fetch("https://getform.io/f/bxowgkwa", {
-        method: 'POST',
-        body: formData,
-        headers: {
-          'Accept': 'application/json'
-        }
-      });
-
-      if (response.ok) {
-        // Clear all form fields with proper type casting
-        const inputs = form.querySelectorAll('input, textarea');
-        inputs.forEach((element) => {
-          const input = element as HTMLInputElement | HTMLTextAreaElement;
-          if (input instanceof HTMLInputElement && input.type === 'checkbox') {
-            input.checked = false;
-          } else {
-            input.value = '';
-          }
-        });
-
-        // Optional: Show success message
-        alert('Message sent successfully!');
-      } else {
-        throw new Error('Form submission failed');
-      }
-    } catch (error) {
-      console.error('Error submitting form:', error);
-      alert('Failed to send message. Please try again.');
+  useEffect(() => {
+    if (fetcher.data?.success) {
+      alert('🎉 You\'re on the waitlist!\n\nWe\'ll notify you as soon as we launch. Get ready to build your professional website in just 5 minutes.\n\nThank you for joining us!');
+      // Redirect to home page after user clicks OK on the alert
+      navigate('/');
+    } else if (fetcher.data?.error) {
+      alert('Error: ' + fetcher.data.error + '\n\nPlease try again or contact us at hello@myporsia.com');
     }
-  };
+  }, [fetcher.data, navigate]);
 
   return (
-    <div className="relative bg-white py-24 mt-24" id="contact-form">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Header */}
-        <div className="max-w-2xl">
-          <h2 className="text-5xl font-medium mb-6">Get in touch</h2>
-          <p className="text-xl text-gray-700 mb-12">
-            If you have any questions or you'd like to find out more about our services, please get in touch.
-          </p>
-        </div>
+    <div className="relative bg-gradient-to-br from-blue-600 to-purple-600 py-24" id="waitlist">
+      <div className="max-w-4xl mx-auto px-4">
+        <div className="bg-white rounded-3xl p-12 shadow-2xl">
+          <div className="text-center mb-10">
+            <div className="inline-block mb-6 px-4 py-2 bg-orange-50 rounded-full border border-orange-200">
+              <span className="text-orange-700 font-semibold text-sm">⚡ Limited Early Access</span>
+            </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 lg:gap-24">
-          {/* Contact Details */}
-          <div className="lg:col-span-1">
-            <div className="space-y-8">
+            <h2 className="text-5xl font-bold text-gray-900 mb-4">
+              Build Your Website <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-purple-600">FREE</span>
+            </h2>
+            <p className="text-xl text-gray-600 mb-2">
+              Join 2,847 professionals who stopped losing clients
+            </p>
+            <p className="text-gray-500">
+              Get instant access • No credit card • Live in 5 minutes
+            </p>
+          </div>
+
+          <fetcher.Form
+            method="post"
+            className="max-w-lg mx-auto space-y-5"
+          >
+            <input type="hidden" name="timestamp" value={new Date().toISOString()} />
+            <div>
+              <label className="block text-sm font-bold text-gray-700 mb-2">Your Name *</label>
+              <input
+                type="text"
+                name="name"
+                placeholder="Rajesh Kumar"
+                className="w-full px-4 py-4 rounded-xl border-2 border-gray-300 text-lg focus:border-blue-500 focus:outline-none"
+                required
+              />
+            </div>
+
+            <div>
+              <label className="block text-sm font-bold text-gray-700 mb-2">Your Profession *</label>
+              <input
+                type="text"
+                name="profession"
+                placeholder="Yoga Instructor"
+                className="w-full px-4 py-4 rounded-xl border-2 border-gray-300 text-lg focus:border-blue-500 focus:outline-none"
+                required
+              />
+            </div>
+
+            <div>
+              <label className="block text-sm font-bold text-gray-700 mb-2">Email Address *</label>
+              <input
+                type="email"
+                name="email"
+                placeholder="rajesh@example.com"
+                className="w-full px-4 py-4 rounded-xl border-2 border-gray-300 text-lg focus:border-blue-500 focus:outline-none"
+                required
+              />
+            </div>
+
+            <button
+              type="submit"
+              disabled={isSubmitting}
+              className="w-full py-5 bg-gradient-to-r from-blue-600 to-purple-600 text-white text-xl font-bold rounded-xl hover:opacity-90 transition-all shadow-lg disabled:opacity-50"
+            >
+              {isSubmitting ? '⏳ Joining...' : '✨ Get FREE Access Now'}
+            </button>
+
+            <p className="text-center text-sm text-gray-500">
+              Free 7-day trial • No credit card • ₹50/month after trial
+            </p>
+          </fetcher.Form>
+
+          <div className="mt-10 pt-10 border-t border-gray-200">
+            <div className="grid grid-cols-3 gap-6 text-center">
               <div>
-                <h3 className="text-lg font-medium text-gray-900 mb-2">Contact details:</h3>
-                <a 
-                  href="mailto:hello@myporsia.com"
-                  className="text-gray-700 hover:text-brand-blue transition-colors"
-                >
-                  hello@myporsia.com
-                </a>
+                <div className="text-3xl font-bold text-blue-600">2,847+</div>
+                <div className="text-sm text-gray-600">Professionals</div>
               </div>
-
               <div>
-                <h3 className="text-lg font-medium text-gray-900 mb-2">Office address:</h3>
-                <address className="text-gray-700 not-italic">
-                  Bengaluru, Karnataka<br />
-                  India
-                </address>
+                <div className="text-3xl font-bold text-green-600">5 min</div>
+                <div className="text-sm text-gray-600">Setup Time</div>
               </div>
-
               <div>
-                <h3 className="text-lg font-medium text-gray-900 mb-2">Follow us:</h3>
-                <div className="flex gap-4">
-                  <a 
-                    href="https://www.instagram.com/porsiaofficial/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-gray-600 hover:text-brand-purple transition-colors"
-                  >
-                    Instagram
-                  </a>
-                  <a 
-                    href="https://www.linkedin.com/company/porsia"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-gray-600 hover:text-brand-blue transition-colors"
-                  >
-                    LinkedIn
-                  </a>
-                </div>
+                <div className="text-3xl font-bold text-purple-600">₹50</div>
+                <div className="text-sm text-gray-600">Per Month</div>
               </div>
             </div>
           </div>
+        </div>
 
-          {/* Contact Form */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:col-span-2">
-            {/* Form Section */}
-            <div className="bg-white rounded-3xl p-8 border border-gray-200 shadow-sm md:col-span-2">
-              <form 
-                action="https://getform.io/f/bxowgkwa"
-                method="POST"
-                className="space-y-6"
-                onSubmit={handleSubmit}
-              >
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <div>
-                    <label htmlFor="firstName" className="block text-sm font-medium text-gray-700 mb-2">
-                      First name*
-                    </label>
-                    <input
-                      type="text"
-                      id="firstName"
-                      name="firstName"
-                      required
-                      className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-brand-purple/20 focus:border-brand-purple transition-colors"
-                    />
-                  </div>
-
-                  <div>
-                    <label htmlFor="lastName" className="block text-sm font-medium text-gray-700 mb-2">
-                      Last name*
-                    </label>
-                    <input
-                      type="text"
-                      id="lastName"
-                      name="lastName"
-                      required
-                      className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-brand-purple/20 focus:border-brand-purple transition-colors"
-                    />
-                  </div>
-                </div>
-
-                <div>
-                  <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
-                    Email*
-                  </label>
-                  <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    required
-                    className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-brand-purple/20 focus:border-brand-purple transition-colors"
-                  />
-                </div>
-
-                <div>
-                  <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
-                    Please tell us a bit about your site
-                  </label>
-                  <textarea
-                    id="message"
-                    name="message"
-                    rows={6}
-                    className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-brand-purple/20 focus:border-brand-purple transition-colors"
-                  ></textarea>
-                </div>
-
-                <div className="flex items-center gap-2">
-                  <input
-                    type="checkbox"
-                    id="privacy"
-                    name="privacy"
-                    required
-                    className="rounded border-gray-300 text-brand-purple focus:ring-brand-purple"
-                  />
-                  <label htmlFor="privacy" className="text-sm text-gray-700">
-                    I agree with the privacy statement
-                  </label>
-                </div>
-
-                <button
-                  type="submit"
-                  className="inline-flex items-center px-6 py-3 bg-brand-blue text-white rounded-xl hover:bg-blue-700 transition-all"
-                >
-                  Send Message
-                  <HiOutlineArrowRight className="ml-2 w-5 h-5" />
-                </button>
-              </form>
-            </div>
+        <div className="mt-12 text-center text-white">
+          <p className="mb-4">Questions? We're here to help</p>
+          <div className="flex items-center justify-center gap-6 flex-wrap">
+            <a href="mailto:hello@myporsia.com" className="hover:underline">hello@myporsia.com</a>
+            <a href="https://www.instagram.com/porsiaofficial/" target="_blank" rel="noopener noreferrer" className="hover:underline">Instagram</a>
+            <a href="https://www.linkedin.com/company/porsia" target="_blank" rel="noopener noreferrer" className="hover:underline">LinkedIn</a>
           </div>
         </div>
       </div>
     </div>
   );
-} 
+}
