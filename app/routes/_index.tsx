@@ -21,8 +21,12 @@ export const meta: MetaFunction = () => {
 export const action: ActionFunction = async ({ request }) => {
   const formData = await request.formData();
 
+  // Get the current origin (works in both dev and production)
+  const url = new URL(request.url);
+  const apiUrl = `${url.origin}/api/waitlist`;
+
   // Forward to API endpoint
-  const response = await fetch('http://localhost:3000/api/waitlist', {
+  const response = await fetch(apiUrl, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({
